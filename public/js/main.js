@@ -33,10 +33,10 @@ function addOffer() {
 
 function populateTableFromFirebase() {
     const db = getDatabase();
-    const dbRef = ref(db, 'requests');
+    const dbRefrequests = ref(db, 'requests');
 
     
-    onValue(dbRef, (snapshot) => {
+    onValue(dbRefrequests, (snapshot) => {
         const data = snapshot.val();
 
         if (!data) {
@@ -44,7 +44,7 @@ function populateTableFromFirebase() {
             return;
         }
 
-        const table = document.getElementById('dataTable').getElementsByTagName('tbody')[0];
+        const table = document.getElementById('requestTable').getElementsByTagName('tbody')[0];
         table.innerHTML = ""; // Clear existing rows
 
         for(let key in data) {
@@ -53,7 +53,31 @@ function populateTableFromFirebase() {
             newRow.insertCell(1).innerHTML = data[key].contact_input;
             newRow.insertCell(2).innerHTML = data[key].location_input;
             newRow.insertCell(3).innerHTML = data[key].info_input;
-            newRow.insertCell(4).innerHTML = data[key].active ? "Yes" : "No"; 
+            newRow.insertCell(4).innerHTML = data[key].active ? "כן" : "לא"; 
+        }
+    });
+
+
+
+    const dbRefoffers = ref(db, 'offers');
+    onValue(dbRefoffers, (snapshot) => {
+        const data = snapshot.val();
+
+        if (!data) {
+            console.log("No data retrieved from Firebase");
+            return;
+        }
+
+        const table = document.getElementById('offerTable').getElementsByTagName('tbody')[0];
+        table.innerHTML = ""; // Clear existing rows
+
+        for(let key in data) {
+            const newRow = table.insertRow();
+            newRow.insertCell(0).innerHTML = data[key].name;
+            newRow.insertCell(1).innerHTML = data[key].contact_input;
+            newRow.insertCell(2).innerHTML = data[key].location_input;
+            newRow.insertCell(3).innerHTML = data[key].info_input;
+            newRow.insertCell(4).innerHTML = data[key].active ? "כן" : "לא"; 
         }
     });
 }
@@ -63,6 +87,24 @@ function populateTableFromFirebase() {
 
 $(document).ready(function() {
     populateTableFromFirebase();
+    $("#addR").click(addRequest);
+    $("#addO").click(addOffer);
 
+
+
+    var oTable = $("#offerTable");
+    var rTable = $("#requestTable");
+
+    oTable.css("display", "none");
+    rTable.css("display", "table");
+
+    $("#showO").click(function() {
+        oTable.css("display", "table");
+        rTable.css("display", "none");
+    });
+    $("#showR").click(function() {
+        oTable.css("display", "none");
+        rTable.css("display", "table");
+    });
 });
 

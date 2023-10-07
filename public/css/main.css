@@ -1,0 +1,109 @@
+.head1{
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+table {
+  direction: rtl;
+  margin: 0 auto;
+  width: 70%;
+  display:table;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
+  
+}
+
+th {
+  text-align: center;
+  background-color: #f0f0f0;
+}
+.requestTable th{
+  background-color: rgb(243, 193, 147);
+}
+.offerTable th{
+  background-color: rgb(163, 243, 147);
+}
+
+#addRowBtn {
+  margin-top: 20px;
+}
+
+.buttonaddcontainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  
+}
+
+
+.buttonadd {
+  background-color: #222;
+  border-radius: 7px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Farfetch Basis","Helvetica Neue",Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0;
+  max-width: none;
+  min-height: 44px;
+  min-width: 10px;
+  outline: none;
+  overflow: hidden;
+  padding: 9px 20px 8px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 200px;
+  margin-left: 20px;
+}
+
+.buttonadd:hover,
+.buttonadd:focus {
+  opacity: .75;
+}
+
+.buttonswitchcontainer{
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    width:70%;
+    margin: 0 auto;
+}
+.buttonswitch{
+    font-size: large;
+    font-weight: 600;
+    font-weight: 600;
+    width:100%;
+    border: #222 2px solid;
+    border-bottom:#222 1px solid;
+    padding:10px;
+}
+
+#showR{
+    background-color: rgb(243, 193, 147);
+    border-radius:10px 0  0 0 ;
+
+}
+#showO{
+    background-color: rgb(163, 243, 147);
+    border-radius:0 10px  0 0 ;
+
+}

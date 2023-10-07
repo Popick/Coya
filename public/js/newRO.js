@@ -43,17 +43,10 @@ function addToDB(type) {
     };
 
     writeDatabase(postData,type)
-
-    document.getElementById('input1').value = "";
-    document.getElementById('input2').value = "";
-    document.getElementById('input3').value = "";
-    document.getElementById('input4').value = "";
-
-
 }
 
 function writeDatabase(postData, type){
-    console.log("writeDatabase");
+    console.log("writeDatabase "+ type);
 
     const db = getDatabase();
   
@@ -74,8 +67,12 @@ function writeDatabase(postData, type){
 }
 
 
-
 $(document).ready(function() {
-    $('#writeNewR').click(addToDB(1));
-    $('#writeNewO').click(addToDB(2));
+    $('#writeNewR').click(function() {
+        addToDB(1);
+    });
+    
+    $('#writeNewO').click(function() {
+        addToDB(2);
+    });
 });
