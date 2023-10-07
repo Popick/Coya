@@ -96,7 +96,10 @@ const searchInput = document.querySelector("[data-search]")
 searchInput.addEventListener("input", (e) => {
     const value = e.target.value.toLowerCase()
     posts.forEach(post => {
-        const isVisible = post.name.toLowerCase().includes(value)
+        const isVisible = post.name.toLowerCase().includes(value) ||
+                          post.contact.toLowerCase().includes(value) ||
+                          post.place.toLowerCase().includes(value) ||
+                          post.info.toLowerCase().includes(value) 
         post.element.classList.toggle("hide", !isVisible)
     })
 })
