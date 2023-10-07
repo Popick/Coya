@@ -20,55 +20,49 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
+
+function addRequest() {
+    window.location.href = 'add_request.html';
+}
+
+function addOffer() {
+    window.location.href = 'add_offer.html';
+}
+
+
+
+function populateTableFromFirebase() {
+    const db = getDatabase();
+    const dbRef = ref(db, 'requests');
+
+    
+    onValue(dbRef, (snapshot) => {
+        const data = snapshot.val();
+
+        if (!data) {
+            console.log("No data retrieved from Firebase");
+            return;
+        }
+
+        const table = document.getElementById('dataTable').getElementsByTagName('tbody')[0];
+        table.innerHTML = ""; // Clear existing rows
+
+        for(let key in data) {
+            const newRow = table.insertRow();
+            newRow.insertCell(0).innerHTML = data[key].name;
+            newRow.insertCell(1).innerHTML = data[key].contact_input;
+            newRow.insertCell(2).innerHTML = data[key].location_input;
+            newRow.insertCell(3).innerHTML = data[key].info_input;
+            newRow.insertCell(4).innerHTML = data[key].active ? "Yes" : "No"; 
+        }
+    });
+}
+
+
+
+
 $(document).ready(function() {
-    var i=0;
-    function writeDatabase(){
-        console.log("writeDatabase");
-        const db = getDatabase();
-   
-        // A post entry.
-        const postData = {
-            i: i,
-            check: "idk"
-        };
-    
-        // Get a key for a new Post.
-        const newPostKey = push(child(ref(db), 'testing')).key;
-      
-        // Write the new post's data simultaneously in the posts list and the user's post list.
-        const updates = {};
-        updates['/testing2/' + newPostKey] = postData;
-        i=i+1;
-        return update(ref(db), updates);
-    }
-    $('#writedb').click(writeDatabase);
-
-
-
-
-    function displayDataFromFirebase() {
-        const db = getDatabase();
-        const dbRef = ref(db, 'testing2');
-    
-        onValue(dbRef, (snapshot) => {
-            const data = snapshot.val();
-            let displayData = '';
-            for(let key in data) {
-                displayData += `<div>Key: ${key}, i: ${data[key].i}, check: ${data[key].check}</div>`;
-            }
-            $('#firebaseData').html(displayData);
-        });
-    }
-
-
-
-
-
-    displayDataFromFirebase();
-
-
-
-
+    populateTableFromFirebase();
 
 });
 
