@@ -1,13 +1,26 @@
+body {
+    font-family: Arial, sans-serif;
+
+    background-image: url(layered-waves-haikei.svg);
+    background-size:     cover;
+    background-repeat:   no-repeat;
+    background-position: center center; 
+    background-attachment: fixed; /* Fix the background in place */
+}
+
+
 .head1{
     font-size: 40px;
     font-weight: bold;
     text-align: center;
     margin-top: 20px;
+    color: #b9d7ea;
     margin-bottom: 20px;
 }
  
 
 table {
+  background-color: white;
   direction: rtl;
   margin: 0 auto;
   width: 70%;
@@ -27,10 +40,10 @@ th {
   background-color: #f0f0f0;
 }
 .requestTable th{
-  background-color: rgb(243, 193, 147);
+  background-color: #2B6BFF;
 }
 .offerTable th{
-  background-color: rgb(163, 243, 147);
+  background-color: #6efaff;
 }
 
 #addRowBtn {
@@ -46,11 +59,11 @@ th {
 
 
 .buttonadd {
-  background-color: #222;
+  background-color: #b9d7ea;
   border-radius: 7px;
   border-style: none;
   box-sizing: border-box;
-  color: #fff;
+  color: #222;
   cursor: pointer;
   display: inline-block;
   font-family: "Farfetch Basis","Helvetica Neue",Arial,sans-serif;
@@ -95,15 +108,20 @@ th {
     border: #222 2px solid;
     border-bottom:#222 1px solid;
     padding:10px;
+    cursor: pointer;
+}
+.buttonswitch:hover,
+.buttonswitch:focus {
+  opacity: .75;
 }
 
 #showR{
-    background-color: rgb(243, 193, 147);
+    background-color: #2B6BFF;
     border-radius:10px 0  0 0 ;
 
 }
 #showO{
-    background-color: rgb(163, 243, 147);
+    background-color: #6efaff;
     border-radius:0 10px  0 0 ;
 
 }

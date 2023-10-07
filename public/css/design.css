@@ -31,7 +31,6 @@ body {
     background-size:     cover;
     background-repeat:   no-repeat;
     background-position: center center; 
-    height: 100vh; /* Set the height to 100% of the viewport height */
     background-attachment: fixed; /* Fix the background in place */
   }
   
