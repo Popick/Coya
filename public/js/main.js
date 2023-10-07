@@ -30,6 +30,8 @@ function addOffer() {
 }
 
 
+let posts = [];
+
  
 function populateTableFromFirebase() {
     const db = getDatabase();
@@ -54,6 +56,8 @@ function populateTableFromFirebase() {
             newRow.insertCell(2).innerHTML = data[key].location_input;
             newRow.insertCell(3).innerHTML = data[key].info_input;
             newRow.insertCell(4).innerHTML = data[key].active ? "כן" : "לא"; 
+            posts.push({name: data[key].name, contact: data[key].contact_input, place: data[key].location_input,
+                info: data[key].info_input, element: newRow})
         }
     });
 
@@ -78,11 +82,27 @@ function populateTableFromFirebase() {
             newRow.insertCell(2).innerHTML = data[key].location_input;
             newRow.insertCell(3).innerHTML = data[key].info_input;
             newRow.insertCell(4).innerHTML = data[key].active ? "כן" : "לא"; 
+            posts.push({name: data[key].name, contact: data[key].contact_input, place: data[key].location_input,
+                 info: data[key].info_input, element: newRow})
         }
+        console.log(posts)
     });
 }
 
 
+const searchInput = document.querySelector("[data-search]")
+
+
+searchInput.addEventListener("input", (e) => {
+    const value = e.target.value.toLowerCase()
+    posts.forEach(post => {
+        const isVisible = post.name.toLowerCase().includes(value) ||
+                          post.contact.toLowerCase().includes(value) ||
+                          post.place.toLowerCase().includes(value) ||
+                          post.info.toLowerCase().includes(value) 
+        post.element.classList.toggle("hide", !isVisible)
+    })
+})
 
 
 $(document).ready(function() {
