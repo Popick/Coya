@@ -32,6 +32,7 @@ function addOffer() {
 
 let posts = [];
 
+
  
 function populateTableFromFirebase() {
     const db = getDatabase();
@@ -83,11 +84,11 @@ function populateTableFromFirebase() {
             newRow.insertCell(3).innerHTML = data[key].info_input;
             newRow.insertCell(4).innerHTML = data[key].active ? "כן" : "לא"; 
             posts.push({name: data[key].name, contact: data[key].contact_input, place: data[key].location_input,
-                 info: data[key].info_input, element: newRow})
+                info: data[key].info_input, element: newRow})
         }
-        console.log(posts)
     });
 }
+
 
 
 const searchInput = document.querySelector("[data-search]")
@@ -105,6 +106,8 @@ searchInput.addEventListener("input", (e) => {
 })
 
 
+
+
 $(document).ready(function() {
     populateTableFromFirebase();
     $("#addR").click(addRequest);
@@ -114,6 +117,8 @@ $(document).ready(function() {
 
     var oTable = $("#offerTable");
     var rTable = $("#requestTable");
+    var buttonOffers = $("#showO")
+    var buttonRequests = $("#showR")
 
     oTable.css("display", "none");
     rTable.css("display", "table");
@@ -121,10 +126,14 @@ $(document).ready(function() {
     $("#showO").click(function() {
         oTable.css("display", "table");
         rTable.css("display", "none");
+        buttonOffers.css("background-color","#769FCD")
+        buttonRequests.css("background-color","#B9D7EA")
     });
     $("#showR").click(function() {
         oTable.css("display", "none");
         rTable.css("display", "table");
+        buttonOffers.css("background-color","#B9D7EA")
+        buttonRequests.css("background-color","#769FCD")
     });
 });
 
