@@ -30,7 +30,7 @@ function addOffer() {
 }
 
 
-
+ 
 function populateTableFromFirebase() {
     const db = getDatabase();
     const dbRefrequests = ref(db, 'requests');

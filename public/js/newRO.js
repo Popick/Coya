@@ -21,7 +21,7 @@ const app = initializeApp(firebaseConfig);
 
 
 
-
+ 
 
 function addToDB(type) {
     const name_input = document.getElementById('input1').value;
