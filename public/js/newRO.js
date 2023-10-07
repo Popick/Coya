@@ -21,33 +21,32 @@ const app = initializeApp(firebaseConfig);
 
 
 
- 
-
 function addToDB(type) {
-    const name_input = document.getElementById('input1').value;
-    const location_input = document.getElementById('input2').value;
-    const contact_input = document.getElementById('input3').value;
-    const info_input = document.getElementById('input4').value;
+    const name_input = document.getElementById('input1');
+    const location_input = document.getElementById('input2');
+    const contact_input = document.getElementById('input3');
+    const info_input = document.getElementById('input4');
 
-    console.log('Input 1:', name_input);
-    console.log('Input 2:', location_input);
-    console.log('Input 3:', contact_input);
-    console.log('Input 4:', info_input);
-    
-    const postData = {
-        name: name_input,
-        location_input: location_input,
-        contact_input: contact_input,
-        info_input: info_input,
-        active: true
-    };
+    // Validate each input
+    const isNameValid = validateInput(name_input);
+    const isLocationValid = validateInput(location_input);
+    const isContactValid = validateInput(contact_input);
+    const isInfoValid = validateInput(info_input);
 
-    writeDatabase(postData,type)
+    // If all are valid, then proceed
+    if (isNameValid && isLocationValid && isContactValid && isInfoValid) {
+        const postData = {
+            name: name_input.value,
+            location_input: location_input.value,
+            contact_input: contact_input.value,
+            info_input: info_input.value,
+            active: true
+        };
+        writeDatabase(postData, type);
+    }
 }
 
 function writeDatabase(postData, type){
-    console.log("writeDatabase "+ type);
-
     const db = getDatabase();
   
     // Get a key for a new Post.
@@ -57,14 +56,42 @@ function writeDatabase(postData, type){
     const updates = {};
     if (type == 1){
         updates['/requests/' + newPostKey] = postData;
-        return update(ref(db), updates);
     }
     if (type == 2){
         updates['/offers/' + newPostKey] = postData;
-        return update(ref(db), updates);
     }
 
+    // Update database and show alert once data is uploaded
+    update(ref(db), updates)
+        .then(() => {
+            alert("תודה לכם על שיתוף הפעולה! 😊");
+            window.location.href = 'index.html';
+        })
+        .catch(error => {
+            alert("סליחה נתקלנו בבעיות 😞");
+            window.location.href = 'index.html';
+        });
 }
+
+
+function showError() {
+    $("#errormes").css("display", "block");
+}
+
+function clearError() {
+    $("#errormes").css("display", "none");
+}
+
+function validateInput(inputField) {
+    if (!inputField.value.trim()) {
+        showError();
+        return false;
+    } else {
+        return true;
+    }
+}
+
+
 
 
 $(document).ready(function() {
@@ -76,3 +103,7 @@ $(document).ready(function() {
         addToDB(2);
     });
 });
+
+
+
+

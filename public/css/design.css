@@ -19,7 +19,14 @@ th {
 
 
 
+.error {
+  border: 2px solid red; /* Highlight input with red border */
+}
 
+.error-message {
+  color: red;
+  display: none;
+}
 
 
 body {
