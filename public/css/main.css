@@ -29,7 +29,6 @@ table {
 }
 
 th, td {
-  border: 1px solid black;
   padding: 10px;
   text-align: center;
   
@@ -40,10 +39,10 @@ th {
   background-color: #f0f0f0;
 }
 .requestTable th{
-  background-color: #2B6BFF;
+  background-color: #769FCD;
 }
 .offerTable th{
-  background-color: #6efaff;
+  background-color: #769FCD;
 }
 
 #addRowBtn {
@@ -105,27 +104,50 @@ th {
     font-weight: 600;
     font-weight: 600;
     width:100%;
-    border: #222 2px solid;
-    border-bottom:#222 1px solid;
     padding:10px;
     cursor: pointer;
 }
-.buttonswitch:hover,
-.buttonswitch:focus {
-  opacity: .75;
-}
 
 #showR{
-    background-color: #2B6BFF;
+    background-color: #769FCD;
     border-radius:10px 0  0 0 ;
 
 }
 #showO{
-    background-color: #6efaff;
+    background-color: #B9D7EA;
     border-radius:0 10px  0 0 ;
 
 }
 
+.logo1{
+  position: sticky;
+  display: flex;
+  width: 100px;
+}
+
 .hide{
   display: none;
+}
+
+/* Style for the labels and inputs */
+.label_box, .input_box {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 16px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width:200px;
+    background-color: #B9D7EA;
+}
+
+.search-warpper{
+  direction: rtl;
+  margin: 0 auto;
+  justify-content: center;
+  width: 70%;
+  border-collapse: collapse;
+  height: min-content;
 }
