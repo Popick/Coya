@@ -1,5 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
-import { getDatabase, ref, set, push, child, update} from 'https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js';// TODO: Add SDKs for Firebase products that you want to use
+import { getDatabase, ref, set, push, child, update, onValue} from 'https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js';// TODO: Add SDKs for Firebase products that you want to use
+
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 
@@ -23,7 +24,6 @@ $(document).ready(function() {
     var i=0;
     function writeDatabase(){
         console.log("writeDatabase");
-
         const db = getDatabase();
    
         // A post entry.
@@ -31,7 +31,7 @@ $(document).ready(function() {
             i: i,
             check: "idk"
         };
-      
+    
         // Get a key for a new Post.
         const newPostKey = push(child(ref(db), 'testing')).key;
       
@@ -40,9 +40,35 @@ $(document).ready(function() {
         updates['/testing2/' + newPostKey] = postData;
         i=i+1;
         return update(ref(db), updates);
+    }
+    $('#writedb').click(writeDatabase);
 
+
+
+
+    function displayDataFromFirebase() {
+        const db = getDatabase();
+        const dbRef = ref(db, 'testing2');
+    
+        onValue(dbRef, (snapshot) => {
+            const data = snapshot.val();
+            let displayData = '';
+            for(let key in data) {
+                displayData += `<div>Key: ${key}, i: ${data[key].i}, check: ${data[key].check}</div>`;
+            }
+            $('#firebaseData').html(displayData);
+        });
     }
 
-    $('#writedb').click(writeDatabase);
+
+
+
+
+    displayDataFromFirebase();
+
+
+
+
+
 });
 
