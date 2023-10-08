@@ -51,7 +51,7 @@ function writeDatabase(postData, type){
   
     // Get a key for a new Post.
     const newPostKey = push(child(ref(db), 'no_key')).key;
-  
+  ``
     // Write the new post's data simultaneously in the posts list and the user's post list.
     const updates = {};
     if (type == 1){

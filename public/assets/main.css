@@ -20,6 +20,7 @@ body {
  
 
 table {
+
   background-color: white;
   direction: rtl;
   margin: 0 auto;
@@ -30,6 +31,8 @@ table {
 
 th, td {
   padding: 10px;
+  border: #222 1px solid; 
+
   text-align: center;
   
 }
@@ -100,6 +103,8 @@ th {
     margin: 0 auto;
 }
 .buttonswitch{
+    border: #000000 2px solid; 
+    border-bottom: none;
     font-size: large;
     font-weight: 600;
     font-weight: 600;

@@ -56,7 +56,6 @@ function populateTableFromFirebase() {
             newRow.insertCell(1).innerHTML = data[key].contact_input;
             newRow.insertCell(2).innerHTML = data[key].location_input;
             newRow.insertCell(3).innerHTML = data[key].info_input;
-            newRow.insertCell(4).innerHTML = data[key].active ? "כן" : "לא"; 
             posts.push({name: data[key].name, contact: data[key].contact_input, place: data[key].location_input,
                 info: data[key].info_input, element: newRow})
         }
@@ -82,7 +81,6 @@ function populateTableFromFirebase() {
             newRow.insertCell(1).innerHTML = data[key].contact_input;
             newRow.insertCell(2).innerHTML = data[key].location_input;
             newRow.insertCell(3).innerHTML = data[key].info_input;
-            newRow.insertCell(4).innerHTML = data[key].active ? "כן" : "לא"; 
             posts.push({name: data[key].name, contact: data[key].contact_input, place: data[key].location_input,
                 info: data[key].info_input, element: newRow})
         }
