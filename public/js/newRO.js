@@ -1,24 +1,21 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
 import { getDatabase, ref, set, push, child, update, onValue} from 'https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js';// TODO: Add SDKs for Firebase products that you want to use
+
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-    apiKey: "AIzaSyCIW3yIjZOkiWWyefN9AAJdpfB2DTk9yac",
-    authDomain: "coya-23834.firebaseapp.com",
-    databaseURL: "https://coya-23834-default-rtdb.europe-west1.firebasedatabase.app",
-    projectId: "coya-23834",
-    storageBucket: "coya-23834.appspot.com",
-    messagingSenderId: "239042255794",
-    appId: "1:239042255794:web:d20825faec43e8223322ab",
-    measurementId: "G-LRHG0MY5N2"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-
+    apiKey: "AIzaSyCrBs3NPgqQvEcDj6eKOe15mOoHzAgIHY8",
+    authDomain: "nanabanana-eb14f.firebaseapp.com",
+    databaseURL: "https://nanabanana-eb14f-default-rtdb.firebaseio.com",
+    projectId: "nanabanana-eb14f",
+    storageBucket: "nanabanana-eb14f.appspot.com",
+    messagingSenderId: "76884102277",
+    appId: "1:76884102277:web:c536130f12f6543c642dec",
+    measurementId: "G-K7ZT2CCDXY"
+  };
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
 
 
 function addToDB(type) {
@@ -51,7 +48,8 @@ function addToDB(type) {
             contact_input: contact_input.value,
             info_input: info_input.value,
             active: true,
-            checkedOptions: checkedOptions
+            checkedOptions: checkedOptions,
+            key : ""
         };
         writeDatabase(postData, type);
     }
@@ -62,14 +60,14 @@ function writeDatabase(postData, type){
   
     // Get a key for a new Post.
     const newPostKey = push(child(ref(db), 'no_key')).key;
-  ``
+    postData.key = newPostKey;
     // Write the new post's data simultaneously in the posts list and the user's post list.
     const updates = {};
     if (type == 1){
-        updates['/requests/' + newPostKey] = postData;
+        updates['/pending/requests/' + newPostKey] = postData;
     }
     if (type == 2){
-        updates['/offers/' + newPostKey] = postData;
+        updates['/pending/offers/' + newPostKey] = postData;
     }
 
     // Update database and show alert once data is uploaded

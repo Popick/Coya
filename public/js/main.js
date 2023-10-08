@@ -4,21 +4,18 @@ import { getDatabase, ref, set, push, child, update, onValue} from 'https://www.
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyCIW3yIjZOkiWWyefN9AAJdpfB2DTk9yac",
-  authDomain: "coya-23834.firebaseapp.com",
-  databaseURL: "https://coya-23834-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "coya-23834",
-  storageBucket: "coya-23834.appspot.com",
-  messagingSenderId: "239042255794",
-  appId: "1:239042255794:web:d20825faec43e8223322ab",
-  measurementId: "G-LRHG0MY5N2"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
+    apiKey: "AIzaSyCrBs3NPgqQvEcDj6eKOe15mOoHzAgIHY8",
+    authDomain: "nanabanana-eb14f.firebaseapp.com",
+    databaseURL: "https://nanabanana-eb14f-default-rtdb.firebaseio.com",
+    projectId: "nanabanana-eb14f",
+    storageBucket: "nanabanana-eb14f.appspot.com",
+    messagingSenderId: "76884102277",
+    appId: "1:76884102277:web:c536130f12f6543c642dec",
+    measurementId: "G-K7ZT2CCDXY"
+  };
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
 
 
 function addRequest() {
@@ -36,7 +33,7 @@ let posts = [];
  
 function populateTableFromFirebase() {
     const db = getDatabase();
-    const dbRefrequests = ref(db, 'requests');
+    const dbRefrequests = ref(db, 'accepted/requests');
 
     
     onValue(dbRefrequests, (snapshot) => {
@@ -63,7 +60,7 @@ function populateTableFromFirebase() {
 
 
 
-    const dbRefoffers = ref(db, 'offers');
+    const dbRefoffers = ref(db, 'accepted/offers');
     onValue(dbRefoffers, (snapshot) => {
         const data = snapshot.val();
 
