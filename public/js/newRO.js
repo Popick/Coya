@@ -35,12 +35,23 @@ function addToDB(type) {
 
     // If all are valid, then proceed
     if (isNameValid && isLocationValid && isContactValid && isInfoValid) {
+
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        const checkedOptions = [];
+    
+        checkboxes.forEach((checkbox) => {
+          if (checkbox.checked) {
+            checkedOptions.push(checkbox.name);
+          }
+        });
+        
         const postData = {
             name: name_input.value,
             location_input: location_input.value,
             contact_input: contact_input.value,
             info_input: info_input.value,
-            active: true
+            active: true,
+            checkedOptions: checkedOptions
         };
         writeDatabase(postData, type);
     }
