@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Input Form</title>
+  <link rel="stylesheet" href="css/add_bless.css">
+</head>
+<body>
+
+<div class="form_box">
+
+<h1 class="header1">הוספת ברכה</h1>
+
+<form method="post">
+    <label class="label_box" for="photos">בחר/י תמונה של הברכה</label>
+    <input class="input_box" id="photos" type="file" name="photos"  accept="image/*" required><br><br>
+    <div class="pic_preview">
+          <img id="image-preview" src="" alt="Image Preview" width="500" height="500" hidden>
+    </div>
+    <label class="label_box" for="name">שם המברך/ת</label>
+    <input class="input_box" id="name" type="text" name="name"><br><br>
+
+    <input class="submit_input" type="submit" value="העלה ברכה" id="writeNewO">
+  </form>
+
+
+</div>
+
+<script src="https:///www.gstatic.com/firebasejs/8.3.1/firebase.js"></script>
+<script type="module" src="js/addbless.js"></script>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+
+</body>
+</html>
