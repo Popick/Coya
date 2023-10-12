@@ -18,6 +18,9 @@ const app = initializeApp(firebaseConfig);
 var urlList = [];
 var nameList = [];
 var infoList = [];
+var filterUrlList = [];
+var filterNameList = [];
+var filterInfoList = [];
 
 function collectUrlsFromBranch() {
     const db = getDatabase();
@@ -34,10 +37,16 @@ function collectUrlsFromBranch() {
             urlList.push(data[key].URL);
             nameList.push(data[key].name);
             infoList.push(data[key].info);
+            filterUrlList.push(data[key].URL);
+            filterNameList.push(data[key].name);
+            filterInfoList.push(data[key].info);
         }
         urlList.reverse();
         nameList.reverse();
         infoList.reverse();
+        filterUrlList.reverse();
+        filterNameList.reverse();
+        filterInfoList.reverse();
 
         console.log(urlList);
         displayImages();
@@ -58,20 +67,19 @@ function setModalContentSize(image) {
     modalContent.style.height = image.height + 'px';
 }
 
+var imageContainer = document.getElementById('boxes');
+
 // Function to display images from the URLs
 function displayImages() {
-    var imageContainer = document.getElementById('boxes');
     imageContainer.innerHTML = "";
     // Loop through the image URLs and create image elements inside a "box" div
-    urlList.forEach(function (imageUrl) {
+    filterUrlList.forEach(function (imageUrl) {
         var box = document.createElement('div');
         box.className = 'box';
 
         var image = document.createElement('img');
         image.src = imageUrl;
         image.style.maxWidth = '100%'; // Adjust image width as needed
-
-        // image = resizeImage(image);
 
         box.appendChild(image);
         imageContainer.appendChild(box);
@@ -82,14 +90,13 @@ function displayImages() {
             const parentBox = image.parentElement;
             const index = Array.from(boxes).indexOf(parentBox); console.log('Clicked box index:', index);
             const textBox = document.getElementById("modal-text");
-            textBox.innerHTML = "פורסם על ידי "+ nameList[index] + "<br>" + infoList[index];
+            textBox.innerHTML = "פורסם על ידי "+ filterNameList[index] + "<br>" + filterInfoList[index];
             var modal = document.getElementById('imageModal');
             modal.style.display = 'flex'; // Use flex for vertical and horizontal centering
             modalImage.src = imageUrl;
             modalImage = resizeImage(modalImage);
         });
 
-        // Append the image to the "box" div, and then the "box" div to the container
         
     });
 
@@ -108,7 +115,6 @@ function displayImages() {
         }
     });
 
-
 }
 
 // Handle image load to set modal content size
@@ -118,13 +124,13 @@ modalImage.onload = function () {
 
 
 function resizeImage(image){
-    if (display.width>1080 & image.width != 1024) {
+    if (window.innerWidth>1080 & image.width != 1024) {
         console.log(image.height + " / " + image.width);
         var aspectRatio = image.height / image.width;
         image.width = 1024;
         image.height = 1024 * aspectRatio;
       }
-    if (display.width<=1080 & image.width != 480) {
+    if (window.innerWidth<=1080 & image.width != 480) {
         console.log(image.height + " / " + image.width);
         var aspectRatio = image.height / image.width;
         image.width = 480;
@@ -132,4 +138,30 @@ function resizeImage(image){
       } 
       
     return image;
+}
+
+const searchInput = document.getElementById('search');
+searchInput.addEventListener('input', filterImages);
+
+// Function to filter images and descriptions based on user input
+function filterImages() {
+    console.log("FUCK HAMAS FUCK HAMAS FUCK HAMAS FUCK HAMAS FUCK HAMAS FUCK HAMAS");
+    const searchTerm = searchInput.value.toLowerCase();
+    console.log("search:" +searchTerm);
+     filterUrlList = [];
+     filterNameList = [];
+     filterInfoList = [];
+
+    for (let i = 0; i < urlList.length; i++) {
+        if (infoList[i].toLowerCase().includes(searchTerm)) {
+            filterUrlList.push(urlList[i]);
+            filterInfoList.push(infoList[i]);
+            filterNameList.push(nameList[i]);
+            console.log(filterUrlList);
+            console.log(filterInfoList);
+            console.log(filterNameList);
+        }
+    }
+    console.log("hiii");
+    displayImages();
 }
