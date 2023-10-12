@@ -1,38 +1,11 @@
-table {
-  width: 100%;
-  border-collapse: collapse;
+
+* {
+  box-sizing: border-box;
 }
-
-
-th, td {
-  border: 1px solid black;
-  padding: 10px;
-  text-align: left;
-}
-
-th {
-  background-color: #f0f0f0;
-}
-
-#addRowBtn {
-  margin-top: 20px;
-}
-
-
-
-.error {
-  border: 2px solid red; /* Highlight input with red border */
-}
-
-.error-message {
-  color: red;
-  display: none;
-}
-
 
 body {
   font-family: Arial, sans-serif;
-
+  margin: 0 ;
   background-image: url(layered-waves-haikei.svg);
   background-size:     cover;
   background-repeat:   no-repeat;
@@ -40,32 +13,43 @@ body {
   background-attachment: fixed; /* Fix the background in place */
 }
 
+
+.container_full {
+  width: 100%;
+}
+
+.container_center {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: white;
+  text-align: center;
+}
   /* Style for the form box */
   .form_box {
-    width: 1000px;
+    width: 100%;
     margin: 50px auto;
-    padding: 20px;
+    /* padding: 20px; */
     border: 1px solid #ccc;
     border-radius: 10px;
-    background-color: #f9f9f9;
+    background-color: transparent;
     text-align: center;
     
   }
   
   /* Style for the h1 header */
-  /* .header1 {
-    font-size: 24px;
+  .header1 {
+    font-size: 36px;
     margin-bottom: 20px;
     color: #769FCD;
-  } */
+  }
   
   /* Style for the labels and inputs */
   .label_box, .input_box {
     display: block;
     width: 100%;
-    margin-bottom: 10px;
-    font-size: 16px;
-    padding: 10px;
+    margin: 10px auto;
+    font-size: 24px;
+    padding: 14px;
     box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -76,18 +60,20 @@ body {
     outline: none; /* Remove the focus outline */
     display: block;
     width: 100%;
-    margin-bottom: 10px;
+    margin: 0 auto;
     font-size: 16px;
     padding: 10px;
     box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
+
   
   /* Style for the upload button */
   .submit_input {
+    margin: 4px auto;
     display: block;
-    width: 100%;
+    width: 80%;
     padding: 15px;
     font-size: 18px;
     border: none;
@@ -105,22 +91,22 @@ body {
   
 
   .pic_preview{
-    margin: 32px 16px;
+    margin: 0 auto;
     text-align: center;
     justify-content: center;
   }
 
   #image-preview{
+    max-width: 300px;
+    max-height: auto;
     margin: 0 auto;
   }
   /* Media query for smaller screens (e.g., mobile devices) */
   @media (max-width: 600px) {
-    .form_box {
-      max-width: 90%;
-      margin: 20px auto;
-      padding: 10px;
-      background-size: auto; /* Adjust the background size for smaller screens */
-    }
+    body {
+      transform: scale(0.8); /* Adjust the scale factor as needed */
+      transform-origin: top left;
+  }
   }
   
 
@@ -143,4 +129,38 @@ body {
       transform: rotate(360deg);
     }
   }
+
+
+
+  @media (max-width: 768px) {
+
+    .container_full {
+      height: auto;
+  }
+  
+  .container_center {
+      width:fit-content;
+      height: auto;
+      margin: 0 auto;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+  }
+    /* CSS styles for screens with a maximum width of 768px (typical for tablets and mobiles) */
+    .form_box {
+      font-size: 16px;
+      height: auto;
+      padding: 64px;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+    }
+  }
+  
+
+
+
+
 
