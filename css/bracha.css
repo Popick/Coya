@@ -95,33 +95,6 @@ header a:hover {
     justify-content: space-between;
 }
 
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.7);
-}
-
-.modal-content {
-    display: block;
-    margin: 0 auto;
-    max-width: 90%;
-    max-height: 90%;
-}
-
-.close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 24px;
-    cursor: pointer;
-    color: #fff;
-}
 
 .box {
     min-width: 30%;
@@ -142,7 +115,6 @@ header a:hover {
     max-width: 300px;
     transform: scale(1.2);
 }
-
 
 
  /* Styling for the modal */
@@ -166,6 +138,7 @@ header a:hover {
     min-height: auto;
     max-width: 80%;
     max-height: auto;
+    margin: 0 auto;
   }
 
   .close {
@@ -174,6 +147,7 @@ header a:hover {
     right: 10px;
     font-size: 24px;
     cursor: pointer;
+    color: white;
   }
 
   .modal-image-container {

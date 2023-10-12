@@ -21,7 +21,7 @@ var infoList = [];
 
 function collectUrlsFromBranch() {
     const db = getDatabase();
-    const dbRefBlessings = ref(db, 'pending');
+    const dbRefBlessings = ref(db, 'approved');
     onValue(dbRefBlessings, (snapshot) => {
         const data = snapshot.val();
         urlList = [];

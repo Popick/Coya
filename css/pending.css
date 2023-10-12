@@ -95,33 +95,6 @@ header a:hover {
     justify-content: space-between;
 }
 
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.7);
-}
-
-.modal-content {
-    display: block;
-    margin: 0 auto;
-    max-width: 90%;
-    max-height: 90%;
-}
-
-.close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 24px;
-    cursor: pointer;
-    color: #fff;
-}
 
 .box {
     min-width: 30%;
@@ -166,6 +139,7 @@ header a:hover {
     min-height: auto;
     max-width: 80%;
     max-height: auto;
+    margin:  0 auto;
   }
 
   .close {
@@ -199,3 +173,35 @@ header a:hover {
     background: #fff;
     flex: 1; /* Take up the remaining space */
   }
+
+
+  #approve-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50; /* Green background color */
+    color: white; /* White text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Optional: Add rounded corners */
+    cursor: pointer; /* Add a pointer cursor on hover */
+  }
+  
+  /* Hover effect */
+  #approve-button:hover {
+    background-color: #45a049; /* Darker green color on hover */
+  }
+  
+  #reject-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #da1717; /* Red background color */
+    color: white; /* White text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Optional: Add rounded corners */
+    cursor: pointer; /* Add a pointer cursor on hover */
+  }
+  
+  /* Hover effect */
+  #reject-button:hover {
+    background-color: rgb(160, 69, 69); /* Darker red color on hover */
+  }
+  
