@@ -107,6 +107,8 @@ function displayImages() {
             modal.style.display = 'none';
         }
     });
+
+
 }
 
 // Handle image load to set modal content size
@@ -116,12 +118,18 @@ modalImage.onload = function () {
 
 
 function resizeImage(image){
-    if (image.width != 1024) {
+    if (display.width>1080 & image.width != 1024) {
         console.log(image.height + " / " + image.width);
         var aspectRatio = image.height / image.width;
         image.width = 1024;
         image.height = 1024 * aspectRatio;
       }
-
-      return image;
+    if (display.width<=1080 & image.width != 480) {
+        console.log(image.height + " / " + image.width);
+        var aspectRatio = image.height / image.width;
+        image.width = 480;
+        image.height = 480 * aspectRatio;
+      } 
+      
+    return image;
 }

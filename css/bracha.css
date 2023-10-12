@@ -131,24 +131,26 @@ header a:hover {
   }
 
   .modal-content {
+    position: relative;
     display: flex;
     justify-content: center;
-    align-items: center;
-    min-width: 32%;
-    min-height: auto;
-    max-width: 80%;
-    max-height: auto;
-    margin: 0 auto;
+    align-items: center;    
+    margin: 24px auto;
+    background-color: rgba(0, 0, 0, 0.3);
   }
 
   .close {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 10px; /* Adjust the top position as needed */
+    right: 10px; /* Adjust the right position as needed */
+    background: transparent;
+    border: none;
     font-size: 24px;
     cursor: pointer;
-    color: white;
-  }
+    color: #fff;
+}
+
+
 
   .modal-image-container {
     min-width: 64%;
@@ -158,18 +160,16 @@ header a:hover {
     display: flex;
   }
 
-  #modalImage {
-    
+  #modalImage {  
     width: 100%;
     max-height: 80vh;
-    border: 1px solid #ccc; /* Add a border around the image content */
     display: block;
     margin: 0 auto;
   }
 
   #modal-text {
     direction: rtl;
-    padding: 20px;
+    padding: 16px;
     background: #fff;
-    flex: 1; /* Take up the remaining space */
-  }
+
+}
