@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>הוספת מידע</title>
+    <link rel="stylesheet" href="css/addinfo.css">
+</head>
+
+<body>
+
+    <div class="info container_center">
+        <h1>הוספת מידע לטבלת נעדרים</h1>
+        <p>על מנת להוסיף מידע על נעדר/ת חדש, אנא לחצו על הכפתור "הוסף מידע"</p>
+        <a href="main.html">
+            <button class="back">חזרה לטבלה </button>
+        </a>
+    </div>
+
+    <div class="container_center">
+        <form id="dataForm">
+            <div id="imagePreview">
+                <div id="imageContainer">
+                    <img src="images/defaultpic.jpg" alt="Default Image" id="personImage">
+                </div>
+                <button type="button" id="choose_pic">choose Image</button>
+                <input type="file" id="fileInput" style="display: none;" accept="image/*">
+            </div>
+            <input type="text" class="input_box" id="name" placeholder="שם נעדר/ת">
+            <input type="text" class="input_box" id="place" placeholder="מידע עדכני לגבי הנעדר/ת">
+            <input type="text" class="input_box" id="phone" placeholder="טלפון + שם איש קשר">
+            <button type="submit" class="add" id="writedb">שליחת עדכון</button>
+        </form>
+    </div>
+
+
+
+    <script type="module" src="js/addinfo.js"></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+
+</body>
+
+
+
+
+
+</html>
