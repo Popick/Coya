@@ -51,7 +51,7 @@ function populateTableFromFirebase() {
         table.innerHTML = ""; // Clear existing rows
 
         for(let key in data) {
-            const newRow = table.insertRow();
+            const newRow = table.insertRow(0);
             newRow.insertCell(0).innerHTML = data[key].name;
             newRow.insertCell(1).innerHTML = data[key].contact_input;
             newRow.insertCell(2).innerHTML = data[key].location_input;
@@ -76,7 +76,7 @@ function populateTableFromFirebase() {
         table.innerHTML = ""; // Clear existing rows
 
         for(let key in data) {
-            const newRow = table.insertRow();
+            const newRow = table.insertRow(0);
             newRow.insertCell(0).innerHTML = data[key].name;
             newRow.insertCell(1).innerHTML = data[key].contact_input;
             newRow.insertCell(2).innerHTML = data[key].location_input;

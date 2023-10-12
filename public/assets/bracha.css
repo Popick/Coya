@@ -173,3 +173,5 @@ header a:hover {
     background: #fff;
     flex: 1; /* Take up the remaining space */
   }
+  #modal-text h4{
+  }
