@@ -52,15 +52,22 @@ async function uploadPhotos(pkey) {
         // save to the skeleton
         photoUrl.then((url) => {
             console.log(url);
-            if (getElementVal("name")===null){
+            if (getElementVal("name").value===null){
                 var Name = "אנונימי";
             }
             else{
                 var Name = getElementVal("name").value;
             }
+            if (getElementVal("info").value===null){
+                var Info = "NONE";
+            }
+            else{
+                var Info = getElementVal("info").value;
+            }
             var bless1 = {
                 name: Name,
-                URL: url
+                URL: url,
+                info: Info
             };
             // save the links in the database
             writeDatabase(bless1);

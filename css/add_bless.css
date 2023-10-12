@@ -70,6 +70,19 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
   }
+
+  #myTextarea {
+    resize: none; /* Disable the resize handle */
+    outline: none; /* Remove the focus outline */
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 16px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
   
   /* Style for the upload button */
   .submit_input {
@@ -95,7 +108,6 @@ body {
     margin: 32px 16px;
     text-align: center;
     justify-content: center;
-    border: 1px red solid;
   }
 
   #image-preview{

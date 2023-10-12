@@ -156,6 +156,7 @@ header a:hover {
         height: 100%;
         background-color: rgba(0, 0, 0, 0.7);
         overflow: auto;
+
       }
   
       .modal-content {
@@ -163,7 +164,7 @@ header a:hover {
         justify-content: center;
         align-items: center;
         max-height: auto;
-        max-width: 64%;
+        max-width: 50%;
       }
   
       .close {
