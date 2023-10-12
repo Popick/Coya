@@ -36,6 +36,8 @@ form.addEventListener('submit', (event) => {
 
 
 async function uploadPhotos(pkey) {
+
+    toggleRotatingCircle();
     // Get the photos from the form.
     const photos = document.querySelector('input[name="photos"]').files;
     const firebase = window.firebase;
@@ -52,13 +54,13 @@ async function uploadPhotos(pkey) {
         // save to the skeleton
         photoUrl.then((url) => {
             console.log(url);
-            if (getElementVal("name").value===null){
+            if (getElementVal("name").value===""){
                 var Name = "אנונימי";
             }
             else{
                 var Name = getElementVal("name").value;
             }
-            if (getElementVal("info").value===null){
+            if (getElementVal("info").value===""){
                 var Info = "NONE";
             }
             else{
@@ -74,6 +76,7 @@ async function uploadPhotos(pkey) {
         });
       });
     }
+    toggleRotatingCircle();
 }
 
 
@@ -82,6 +85,8 @@ async function writeDatabase(postData) {
     const db = firebase.database().ref("pending");
     const pushToDatabase = db.push();
     pushToDatabase.set(postData);
+    alert("ברכתכם התקבלה בהצלחה! תודה רבה!");
+    window.close();
 }
 
 
@@ -109,3 +114,15 @@ imageUploadInput.addEventListener("change", function () {
         imagePreview.src = "";
     }
 });
+
+
+function toggleRotatingCircle() {
+    var rotatingCircle = document.getElementById("rotatingCircle");
+    var computedStyle = window.getComputedStyle(rotatingCircle);
+
+    if (computedStyle.display === "none") {
+      rotatingCircle.style.display = "block";
+    } else {
+      rotatingCircle.style.display = "none";
+    }
+}
