@@ -22,7 +22,7 @@ var keyList = [];
 
 function collectUrlsFromBranch() {
     const db = getDatabase();
-    const dbRefBlessings = ref(db, 'pending');
+    const dbRefBlessings = ref(db, 'blessings');
     onValue(dbRefBlessings, (snapshot) => {
         const data = snapshot.val();
         urlList = [];
@@ -92,18 +92,18 @@ function displayImages() {
             modal.style.display = 'flex'; // Use flex for vertical and horizontal centering
             modalImage.src = imageUrl;
             modalImage = resizeImage(modalImage);            
-            var approveButton = document.getElementById("approve-button");
-            approveButton.onclick = function(){
-                const bless1 = {
-                    name: nameList[index],
-                    URL: urlList[index],
-                    info: infoList[index]
-                };
-                writeDatabase(bless1);
-                var key = keyList[index];
-                deleteDataFromDatabase(key);
-                modal.style.display = 'none';
-            }
+            // var approveButton = document.getElementById("approve-button");
+            // approveButton.onclick = function(){
+            //     const bless1 = {
+            //         name: nameList[index],
+            //         URL: urlList[index],
+            //         info: infoList[index]
+            //     };
+            //     writeDatabase(bless1);
+            //     var key = keyList[index];
+            //     deleteDataFromDatabase(key);
+            //     modal.style.display = 'none';
+            // }
             var declineButton = document.getElementById("reject-button");
             declineButton.onclick = function(){
                 var key = keyList[index];
@@ -111,7 +111,6 @@ function displayImages() {
                 modal.style.display = 'none';
 
             }
-
 
         });
 
@@ -152,25 +151,25 @@ function resizeImage(image){
       return image;
 }
 
-// a funcsion that write objects to the DB
-async function writeDatabase(postData) {
-    const db = getDatabase();
-    const newPostKey = push(child(ref(db), 'no_key')).key;
-    const updates = {};
-    updates['/approved/' + newPostKey] = postData;
-    update(ref(db), updates)
-        .then(() => {
-            console.log("עבר בהצלחה");
-        })
-        .catch(error => {
-            console.log("סליחה נתקלנו בבעיות 😞");
-        });
-}
+// // a funcsion that write objects to the DB
+// async function writeDatabase(postData) {
+//     const db = getDatabase();
+//     const newPostKey = push(child(ref(db), 'no_key')).key;
+//     const updates = {};
+//     updates['/approved/' + newPostKey] = postData;
+//     update(ref(db), updates)
+//         .then(() => {
+//             console.log("עבר בהצלחה");
+//         })
+//         .catch(error => {
+//             console.log("סליחה נתקלנו בבעיות 😞");
+//         });
+// }
 
 function deleteDataFromDatabase(key) {
     const db = getDatabase();
     const updates = {};
-    updates['/pending/' + key] = null;
+    updates['/blessings/' + key] = null;
 
     // Update database and show alert once data is uploaded
     update(ref(db), updates)

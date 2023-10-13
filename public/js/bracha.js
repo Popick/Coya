@@ -24,7 +24,7 @@ var filterInfoList = [];
 
 function collectUrlsFromBranch() {
     const db = getDatabase();
-    const dbRefBlessings = ref(db, 'approved');
+    const dbRefBlessings = ref(db, 'blessings');
     onValue(dbRefBlessings, (snapshot) => {
         const data = snapshot.val();
         urlList = [];
@@ -55,7 +55,6 @@ function collectUrlsFromBranch() {
 }
 
 collectUrlsFromBranch();
-
 
 
 var modalContent = document.querySelector('.modal-image-container');
@@ -165,3 +164,4 @@ function filterImages() {
     console.log("hiii");
     displayImages();
 }
+

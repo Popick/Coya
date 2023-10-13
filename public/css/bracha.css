@@ -19,49 +19,17 @@ body {
 }
 
 .container_center {
-    max-width: 1800px;
+    max-width: 80%;
     margin: 0 auto;
     text-align: center;
 }
 
 
-header {
-    display: flex;
-    padding: 8px;
-    height: 80px;
-
-}
-
-header .container_center {
-    padding: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-
-
-header a {
-    text-decoration: none;
-    font-size: 28px;
-    color: #444444;
-    color: white;
-    padding: 0 48px;
-}
-
-header a:hover {
-    text-decoration: underline;
-}
 
 .sector1 {
     margin-bottom: 24px;
 }
 
-.logo1 {
-    position: sticky;
-    display: flex;
-    width: 100px;
-}
 
 .head1 {
     direction: rtl;
@@ -73,6 +41,48 @@ header a:hover {
     margin-bottom: 20px;
 }
 
+.strip{
+    display:  flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+
+.strip .box2{
+    width: 85%;
+    text-align: center;
+    border: 2px solid purple;
+}
+
+
+.search-warpper{
+    direction: rtl;
+    margin: 0 auto;
+    justify-content: center;
+    width: 70%;
+    border-collapse: collapse;
+    height: min-content;
+  }
+
+.input_box{
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 16px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #B9D7EA;
+    /* max-width: 300px; */
+
+}
+
+  
 .add {
     direction: rtl;
     font-size: 40px;
@@ -83,11 +93,49 @@ header a:hover {
     background: transparent;
     border: 1px white solid;
     border-radius: 8px;
-    padding: 8px;
+    padding: 24px;
     color: #b9d7ea;
+    cursor: pointer;
+    background-color: rgb(66, 125, 180);
+}
+
+
+.info_strip{
+    display: flex;
+    margin: 0 auto;
+}
+
+.press_here{
+    font-size: 3vh;
+    color: rgb(249, 249, 249);
+    stroke: #060606;
+    stroke-width: 24px;
+    padding: 12px;
+    direction: rtl;
+}
+
+.instructions{
+    padding: 12px;
+    direction: rtl;
+    margin: 0 auto;
+    /* max-width: 60%; */
+    font-size: 3vh;
+    color: rgb(249, 249, 249);
+    stroke: #060606;
+    stroke-width: 24px;
+}
+
+#info-button {
+    width: 40px;
+    height: 40px;
+    background-color: #3498db;
+    color: #fff;
+    font-size: 24px;
+    border-radius: 50%;
     cursor: pointer;
 
 }
+
 
 #boxes {
     display: flex;

@@ -82,7 +82,7 @@ async function uploadPhotos(pkey) {
 
 // a funcsion that write objects to the DB
 async function writeDatabase(postData) {
-    const db = firebase.database().ref("pending");
+    const db = firebase.database().ref("blessings");
     const pushToDatabase = db.push();
     pushToDatabase.set(postData);
     alert("ברכתכם התקבלה בהצלחה! תודה רבה!");
@@ -109,6 +109,7 @@ imageUploadInput.addEventListener("change", function () {
         const imageURL = URL.createObjectURL(file);
         imagePreview.src = imageURL;
         imagePreview.style.display = "block"; // Set the display property to "block" to make it visible
+        console.log("image");
     } else {
         // If no file is selected, clear the image preview
         imagePreview.src = "";

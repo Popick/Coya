@@ -5,7 +5,7 @@
 body {
     font-family: Arial, sans-serif;
 
-    background-image: url(layered-waves-haikei.svg);
+    background-image: url(public/css/layered-waves-haikei.svg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;

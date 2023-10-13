@@ -45,6 +45,7 @@ body {
   
   /* Style for the labels and inputs */
   .label_box, .input_box {
+    direction: rtl;
     display: block;
     width: 100%;
     margin: 10px auto;
@@ -56,6 +57,7 @@ body {
   }
 
   #info {
+    direction: rtl;
     resize: none; /* Disable the resize handle */
     outline: none; /* Remove the focus outline */
     display: block;
@@ -71,7 +73,8 @@ body {
   
   /* Style for the upload button */
   .submit_input {
-    margin: 4px auto;
+    margin: 12px auto;
+    margin-bottom: 4px;
     display: block;
     width: 80%;
     padding: 15px;
@@ -97,8 +100,8 @@ body {
   }
 
   #image-preview{
-    max-width: 300px;
-    max-height: auto;
+    /* max-width: 300px;
+    max-height: auto; */
     margin: 0 auto;
   }
   /* Media query for smaller screens (e.g., mobile devices) */
