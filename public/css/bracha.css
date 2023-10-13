@@ -10,7 +10,6 @@ body {
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
-    /* Fix the background in place */
 }
 
 
@@ -110,7 +109,7 @@ body {
 }
 
 
-@media (max-width: 768px) {
+@media (max-width:810px) {
     .head1{
         font-size: 48px;
     }
@@ -123,6 +122,9 @@ body {
         max-width: 100%;
     }
 }
+
+
+
 
 
 
