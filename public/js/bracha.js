@@ -124,19 +124,13 @@ modalImage.onload = function () {
 
 function resizeImage(image){
     if (window.innerWidth>1080 & image.width != 1024) {
-<<<<<<< HEAD:public/js/bracha.js
-=======
         console.log(image.height + " / " + image.width);
->>>>>>> dd180ef0ec8ad85fdf6cac94121adceab4a34d51:js/bracha.js
         var aspectRatio = image.height / image.width;
         image.width = 1024;
         image.height = 1024 * aspectRatio;
       }
     if (window.innerWidth<=1080 & image.width != 480) {
-<<<<<<< HEAD:public/js/bracha.js
-=======
         console.log(image.height + " / " + image.width);
->>>>>>> dd180ef0ec8ad85fdf6cac94121adceab4a34d51:js/bracha.js
         var aspectRatio = image.height / image.width;
         image.width = 480;
         image.height = 480 * aspectRatio;
@@ -162,13 +156,6 @@ function filterImages() {
             filterUrlList.push(urlList[i]);
             filterInfoList.push(infoList[i]);
             filterNameList.push(nameList[i]);
-<<<<<<< HEAD:public/js/bracha.js
-
-        }
-    }
-    displayImages();
-}
-=======
             console.log(filterUrlList);
             console.log(filterInfoList);
             console.log(filterNameList);
@@ -178,4 +165,3 @@ function filterImages() {
     displayImages();
 }
 
->>>>>>> dd180ef0ec8ad85fdf6cac94121adceab4a34d51:js/bracha.js

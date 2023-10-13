@@ -30,10 +30,6 @@ body {
     margin-bottom: 24px;
 }
 
-<<<<<<< HEAD:public/assets/bracha.css
-=======
-
->>>>>>> dd180ef0ec8ad85fdf6cac94121adceab4a34d51:public/css/bracha.css
 .head1 {
     direction: rtl;
     font-size: 64px;
@@ -47,12 +43,6 @@ body {
 .strip{
     display:  flex;
     justify-content: space-between;
-<<<<<<< HEAD:public/assets/bracha.css
-}
-
-.strip .box1{
-    width: 30%;
-=======
     flex-wrap: wrap;
     text-align: center;
     align-items: center;
@@ -65,7 +55,6 @@ body {
     width: 85%;
     text-align: center;
     border: 2px solid purple;
->>>>>>> dd180ef0ec8ad85fdf6cac94121adceab4a34d51:public/css/bracha.css
 }
 
 
@@ -87,20 +76,12 @@ body {
     box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 5px;
-<<<<<<< HEAD:public/assets/bracha.css
-    width:200px;
-    background-color: #B9D7EA;
-}
-
-
-=======
     background-color: #B9D7EA;
     /* max-width: 300px; */
 
 }
 
   
->>>>>>> dd180ef0ec8ad85fdf6cac94121adceab4a34d51:public/css/bracha.css
 .add {
     direction: rtl;
     font-size: 40px;
@@ -110,14 +91,8 @@ body {
     margin-bottom: 20px;
     border: 1px white solid;
     border-radius: 8px;
-<<<<<<< HEAD:public/assets/bracha.css
-    padding: 12px;
-    background-color: #769FCD;
-    color: white;
-=======
     padding: 24px;
     color: #b9d7ea;
->>>>>>> dd180ef0ec8ad85fdf6cac94121adceab4a34d51:public/css/bracha.css
     cursor: pointer;
     background-color: rgb(66, 125, 180);
 }
@@ -159,13 +134,6 @@ body {
 
 }
 
-<<<<<<< HEAD:public/assets/bracha.css
-.add:hover{
-    background-color: #4183cf;
-    color: white;
-}
-=======
->>>>>>> dd180ef0ec8ad85fdf6cac94121adceab4a34d51:public/css/bracha.css
 
 #boxes {
     display: flex;
