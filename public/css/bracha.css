@@ -32,7 +32,7 @@ body {
 
 .head1 {
     direction: rtl;
-    font-size: 64px;
+    font-size: 4.5vh;
     font-weight: bold;
     text-align: center;
     margin-top: 20px;
@@ -83,7 +83,9 @@ body {
 @media (max-width: 768px) {
     .input_box {
         max-width: 100%;
+
     }
+    
 }
 
 
