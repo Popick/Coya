@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>אויה סיוע</title>
+  <link rel="stylesheet" type="text/css" href="assets/main.css">
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+</head>
+<body>
+  <header>
+    <div class="container_center container_full">
+        <img class="logo1" src="assets/oya-logo.png">
+        <nav>
+            <a href="index.html">מרכז סיוע</a>
+            <a href="bracha.html">בנימה אופטימית</a>
+            <a href="#">קצת עלינו</a>
+          </nav>
+
+    </div>
+</header>
+
+  <h1 class="head1">מרכז סיוע אויה</h1>
+   
+<div class="buttonaddcontainer">
+  <button class="buttonadd" id="addR">הוספת בקשה</button>
+  <button class="buttonadd" id="addO">הוספת הצעה</button>
+</div>
+
+<div class="search-warpper">
+  <!-- <label class="label_box" for="search">Search Users</label> -->
+  <input class="input_box" type="search" id="search" placeholder="חיפוש" data-search>
+</div>
+
+<div class="buttonswitchcontainer">
+  <button class="buttonswitch" id="showO">הצעות</button>
+  <button class="buttonswitch" id="showR">בקשות</button>
+
+</div>
+
+<table class="table requestTable" id="requestTable">
+  <thead>
+    <tr>
+      <th>שם \ כינוי</th>
+      <th>פרטי יצירת קשר</th>
+      <th>מיקום</th>
+      <th>פרטי הבקשה</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Existing rows will be added here -->
+  </tbody>
+</table>
+
+
+<table class="table offerTable" style="display:none;" id="offerTable">
+  <thead>
+    <tr>
+      <th>שם \ כינוי</th>
+      <th>פרטי יצירת קשר</th>
+      <th>מיקום</th>
+      <th>פרטי הצעה</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Existing rows will be added here -->
+  </tbody>
+</table>
+
+
+
+<script type="module" src="js/main.js"></script>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+
+</body>
+</html>

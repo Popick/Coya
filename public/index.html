@@ -1,64 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>אויה סיוע</title>
-  <link rel="stylesheet" type="text/css" href="assets/main.css">
-  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ברכות לחיילים</title>
+  <link rel="stylesheet" href="css/bracha.css">
 </head>
+
 <body>
 
-  <img class="logo1" src="assets/oya-logo.png">
 
-  <h1 class="head1">מרכז סיוע אויה</h1>
-   
-<div class="buttonaddcontainer">
-  <button class="buttonadd" id="addR">הוספת בקשה</button>
-  <button class="buttonadd" id="addO">הוספת הצעה</button>
-</div>
+  <div class="container_center sector1">
+    <h1 class="head1">ברכות לחיילים שלנו❤️</h1>
+    <div class="strip">
+      <div class="box2">
+        <div class="search-warpper">
+          <input class="input_box" type="search" id="search" placeholder="חיפוש (לדוגמא: מוקדש לחיילי גולני)" data-search>
+        </div>
+        <a href="add_bless.html" target="_blank">
+          <button class="add">הוספת ברכה</button>
+        </a>
+        <p class="instructions">
+          האתר מרכז ברכות של תושבי המדינה וילדי המדינה עבור החיילים שלנו!
+          <br>
+          בואו נחזק ונתחזק, יחד ננצח! 
+        </p>
+      </div>
+    </div>
+  </div>
 
-<div class="search-warpper">
-  <!-- <label class="label_box" for="search">Search Users</label> -->
-  <input class="input_box" type="search" id="search" placeholder="חיפוש" data-search>
-</div>
+  <div class="container_center" id="boxes">
 
-<div class="buttonswitchcontainer">
-  <button class="buttonswitch" id="showR">בקשות</button>
-  <button class="buttonswitch" id="showO">הצעות</button>
-</div>
+  </div>
 
-<table class="table requestTable" id="requestTable">
-  <thead>
-    <tr>
-      <th>שם \ כינוי</th>
-      <th>פרטי יצירת קשר</th>
-      <th>מיקום</th>
-      <th>פרטי הבקשה</th>
-    </tr>
-  </thead>
-  <tbody>
-    <!-- Existing rows will be added here -->
-  </tbody>
-</table>
-
-
-<table class="table offerTable" style="display:none;" id="offerTable">
-  <thead>
-    <tr>
-      <th>שם \ כינוי</th>
-      <th>פרטי יצירת קשר</th>
-      <th>מיקום</th>
-      <th>פרטי הצעה</th>
-    </tr>
-  </thead>
-  <tbody>
-    <!-- Existing rows will be added here -->
-  </tbody>
-</table>
+  <div id="imageModal" class="modal">
+    <div id="modalContent" class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <div class="modal-image-container">
+        <img id="modalImage" alt="Modal Image">
+      </div>
+      <div id="modal-text">
+        <p>This is some text that appears to the right of the image.</p>
+      </div>
+    </div>
+  </div>
 
 
 
-<script type="module" src="js/main.js"></script>
-<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+
 
 </body>
+
+
+<script type="module" src="js/bracha.js"></script>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+
 </html>

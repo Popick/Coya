@@ -3,6 +3,8 @@
     "rules": "database.rules.json"
   },
   "hosting": {
+    "cleanUrls": true,
+    "trailingSlash": true,
     "public": "public",
     "ignore": [
       "firebase.json",
@@ -15,5 +17,8 @@
         "destination": "/index.html"
       }
     ]
+  },
+  "storage": {
+    "rules": "storage.rules"
   }
 }

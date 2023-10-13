@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+}
+
+
+.container_center {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.info{
+    text-align: center;
+    direction: rtl;
+}
+
+.info p{
+    font-size: 24px;
+}
+
+#imagePreview{
+    margin-bottom: 24px;
+}
+
+#dataForm{
+    padding: 48px;
+    text-align: center;
+}
+
+
+.input_box{
+    margin: 12px;
+    font-size: 24px;
+    padding: 12px; 
+    direction: rtl;
+}
+
+.add{
+    padding: 12px;
+    background-color: blue;
+    color: white;
+    font-size: 24px;
+}
+
+button{
+    font-size: 24px;
+    padding: 12px;
+}

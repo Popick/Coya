@@ -1,0 +1,194 @@
+body {
+    font-family: Arial, sans-serif;
+
+    background-image: url(layered-waves-haikei.svg);
+    background-size:     cover;
+    background-repeat:   no-repeat;
+    background-position: center center; 
+    background-attachment: fixed; /* Fix the background in place */
+}
+
+.container_full {
+  width: 100%;
+}
+
+.container_center {
+  max-width: 1800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+header {
+  display: flex;
+  padding: 8px;
+  height: 80px;
+
+}
+
+header .container_center {
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+
+header a {
+  text-decoration: none;
+  font-size: 28px;
+  color: #444444;
+  color: white;
+  padding: 0 48px;
+}
+
+header a:hover {
+  text-decoration: underline;
+}
+
+.head1{
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    color: #b9d7ea;
+    margin-bottom: 20px;
+}
+ 
+
+table {
+
+  background-color: white;
+  direction: rtl;
+  margin: 0 auto;
+  width: 70%;
+  display:table;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  border: #222 1px solid; 
+
+  text-align: center;
+  
+}
+
+th {
+  text-align: center;
+  background-color: #f0f0f0;
+}
+.requestTable th{
+  background-color: #769FCD;
+}
+.offerTable th{
+  background-color: #769FCD;
+}
+
+#addRowBtn {
+  margin-top: 20px;
+}
+
+.buttonaddcontainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  
+}
+
+
+.buttonadd {
+  background-color: #b9d7ea;
+  border-radius: 7px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #222;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Farfetch Basis","Helvetica Neue",Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0;
+  max-width: none;
+  min-height: 44px;
+  min-width: 10px;
+  outline: none;
+  overflow: hidden;
+  padding: 9px 20px 8px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 200px;
+  margin-left: 20px;
+}
+
+.buttonadd:hover,
+.buttonadd:focus {
+  opacity: .75;
+}
+
+.buttonswitchcontainer{
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    width:70%;
+    margin: 0 auto;
+}
+.buttonswitch{
+    border: #000000 2px solid; 
+    border-bottom: none;
+    font-size: large;
+    font-weight: 600;
+    font-weight: 600;
+    width:100%;
+    padding:10px;
+    cursor: pointer;
+}
+
+#showR{
+    background-color: #769FCD;
+    border-radius:0 10px  0 0 ;
+}
+#showO{
+    background-color: #B9D7EA;
+    border-radius:10px 0  0 0 ;
+}
+
+.logo1{
+  position: sticky;
+  display: flex;
+  width: 100px;
+}
+
+.hide{
+  display: none;
+}
+
+/* Style for the labels and inputs */
+.label_box, .input_box {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 16px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width:200px;
+    background-color: #B9D7EA;
+}
+
+.search-warpper{
+  direction: rtl;
+  margin: 0 auto;
+  justify-content: center;
+  width: 70%;
+  border-collapse: collapse;
+  height: min-content;
+}
