@@ -61,7 +61,7 @@ async function uploadPhotos(pkey) {
                 var Name = getElementVal("name").value;
             }
             if (getElementVal("info").value===""){
-                var Info = "NONE";
+                var Info = "";
             }
             else{
                 var Info = getElementVal("info").value;

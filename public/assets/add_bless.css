@@ -1,4 +1,3 @@
-
 * {
   box-sizing: border-box;
 }
@@ -11,30 +10,34 @@ body {
   background-repeat:   no-repeat;
   background-position: center center; 
   background-attachment: fixed; /* Fix the background in place */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
 
-
-.container_full {
+.form_box {
+  max-width: 500px; /* Adjust the max-width as needed */
   width: 100%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  background-color: azure;
+  text-align: center; /* Center all text within the form_box */
+
 }
 
-.container_center {
-  max-width: 1200px;
-  margin: 0 auto;
-  background-color: white;
-  text-align: center;
-}
-  /* Style for the form box */
-  .form_box {
-    width: 100%;
-    margin: 50px auto;
-    /* padding: 20px; */
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background-color: transparent;
-    text-align: center;
-    
+/* Add any other styles you need for labels, inputs, etc. */
+
+/* Mobile styling */
+@media screen and (max-width: 700px){
+  .form_box{
+      display:block;
   }
+}
+
+
   
   /* Style for the h1 header */
   .header1 {
@@ -101,13 +104,6 @@ body {
     max-height: auto;
     margin: 0 auto;
   }
-  /* Media query for smaller screens (e.g., mobile devices) */
-  @media (max-width: 600px) {
-    body {
-      transform: scale(0.8); /* Adjust the scale factor as needed */
-      transform-origin: top left;
-  }
-  }
   
 
   .rotating-circle {
@@ -129,38 +125,3 @@ body {
       transform: rotate(360deg);
     }
   }
-
-
-
-  @media (max-width: 768px) {
-
-    .container_full {
-      height: auto;
-  }
-  
-  .container_center {
-      width:fit-content;
-      height: auto;
-      margin: 0 auto;
-      text-align: center;
-      justify-content: center;
-      align-items: center;
-      align-content: center;
-  }
-    /* CSS styles for screens with a maximum width of 768px (typical for tablets and mobiles) */
-    .form_box {
-      font-size: 16px;
-      height: auto;
-      padding: 64px;
-      text-align: center;
-      justify-content: center;
-      align-items: center;
-      align-content: center;
-    }
-  }
-  
-
-
-
-
-

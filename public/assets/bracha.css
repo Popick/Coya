@@ -25,42 +25,9 @@ body {
 }
 
 
-header {
-    display: flex;
-    padding: 8px;
-    height: 80px;
-
-}
-
-header .container_center {
-    padding: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-
-
-header a {
-    text-decoration: none;
-    font-size: 28px;
-    color: #444444;
-    color: white;
-    padding: 0 48px;
-}
-
-header a:hover {
-    text-decoration: underline;
-}
 
 .sector1 {
     margin-bottom: 24px;
-}
-
-.logo1 {
-    position: sticky;
-    display: flex;
-    width: 100px;
 }
 
 .head1 {
@@ -73,6 +40,39 @@ header a:hover {
     margin-bottom: 20px;
 }
 
+.strip{
+    display:  flex;
+    justify-content: space-between;
+}
+
+.strip .box1{
+    width: 30%;
+}
+
+
+.search-warpper{
+    direction: rtl;
+    margin: 0 auto;
+    justify-content: center;
+    width: 70%;
+    border-collapse: collapse;
+    height: min-content;
+  }
+
+.input_box{
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 16px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width:200px;
+    background-color: #B9D7EA;
+}
+
+
 .add {
     direction: rtl;
     font-size: 40px;
@@ -80,13 +80,18 @@ header a:hover {
     text-align: center;
     margin-top: 20px;
     margin-bottom: 20px;
-    background: transparent;
     border: 1px white solid;
     border-radius: 8px;
-    padding: 8px;
-    color: #b9d7ea;
+    padding: 12px;
+    background-color: #769FCD;
+    color: white;
     cursor: pointer;
 
+}
+
+.add:hover{
+    background-color: #4183cf;
+    color: white;
 }
 
 #boxes {
@@ -131,24 +136,26 @@ header a:hover {
   }
 
   .modal-content {
+    position: relative;
     display: flex;
     justify-content: center;
-    align-items: center;
-    min-width: 32%;
-    min-height: auto;
-    max-width: 80%;
-    max-height: auto;
-    margin: 0 auto;
+    align-items: center;    
+    margin: 24px auto;
+    background-color: rgba(0, 0, 0, 0.3);
   }
 
   .close {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 10px; /* Adjust the top position as needed */
+    right: 10px; /* Adjust the right position as needed */
+    background: transparent;
+    border: none;
     font-size: 24px;
     cursor: pointer;
-    color: white;
-  }
+    color: #fff;
+}
+
+
 
   .modal-image-container {
     min-width: 64%;
@@ -158,18 +165,16 @@ header a:hover {
     display: flex;
   }
 
-  #modalImage {
-    
+  #modalImage {  
     width: 100%;
     max-height: 80vh;
-    border: 1px solid #ccc; /* Add a border around the image content */
     display: block;
     margin: 0 auto;
   }
 
   #modal-text {
     direction: rtl;
-    padding: 20px;
+    padding: 16px;
     background: #fff;
-    flex: 1; /* Take up the remaining space */
-  }
+
+}

@@ -1,38 +1,43 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Input Form</title>
   <link rel="stylesheet" href="assets/add_bless.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
 </head>
+
 <body>
 
-<div class="form_box">
 
-<h1 class="header1">הוספת ברכה</h1>
+  <div class="form_box">
+    <h1 class="header1">הוספת ברכה</h1>
 
-<form method="post">
-    <label class="label_box" for="photos">בחר/י תמונה של הברכה</label>
-    <input class="input_box" id="photos" type="file" name="photos"  accept="image/*" required><br><br>
-    <div class="pic_preview">
-          <img id="image-preview" src="" alt="Image Preview" width="500" height="500" hidden>
-    </div>
-    <label class="label_box" for="name">שם המברך/ת</label>
-    <input class="input_box" id="name" type="text" name="name"><br><br>
+    <form method="post">
+      <label class="label_box" for="photos">בחר/י תמונה של הברכה</label>
+      <input class="input_box" id="photos" type="file" name="photos" accept="image/*" required><br><br>
+      <div class="pic_preview">
+        <img id="image-preview" src="" alt="Image Preview" width="500" height="500" hidden>
+      </div>
+      <label class="label_box" for="name">שם המברך/ת</label>
+      <input class="input_box" id="name" type="text" name="name"><br><br>
 
-    <label class="label_box" for="info">תרגישו חופשי להוסיף תמליל של הברכה!</label>
-    <textarea id="info" rows="6" cols="40"></textarea>
+      <label class="label_box" for="info">תרגישו חופשי להוסיף תמליל של הברכה!</label>
+      <textarea id="info" rows="6" cols="40"></textarea>
 
-    <input class="submit_input" type="submit" value="העלה ברכה" id="writeNewO">
-    <div class="rotating-circle" id="rotatingCircle"></div>
+      <input class="submit_input" type="submit" value="העלה ברכה" id="writeNewO">
+      <div class="rotating-circle" id="rotatingCircle"></div>
 
-  </form>
+    </form>
+  </div>
+  
 
 
-</div>
-
-<script src="https:///www.gstatic.com/firebasejs/8.3.1/firebase.js"></script>
-<script type="module" src="js/addbless.js"></script>
-<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+  <script src="https:///www.gstatic.com/firebasejs/8.3.1/firebase.js"></script>
+  <script type="module" src="js/addbless.js"></script>
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
 
 </body>
+
 </html>
