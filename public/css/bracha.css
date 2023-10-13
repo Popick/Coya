@@ -32,7 +32,7 @@ body {
 
 .head1 {
     direction: rtl;
-    font-size: 64px;
+    font-size: 4.5vh;
     font-weight: bold;
     text-align: center;
     margin-top: 20px;
@@ -105,7 +105,8 @@ body {
     margin: 0 auto;
     font-size: 3vh;
     color: rgb(249, 249, 249);
-
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
 }
 
 
