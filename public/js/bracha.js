@@ -28,6 +28,7 @@ function collectUrlsFromBranch() {
     onValue(dbRefBlessings, (snapshot) => {
         const data = snapshot.val();
         urlList = [];
+        filterUrlList = [];
         if (!data) {
             console.log("No data retrieved from Firebase");
             return;

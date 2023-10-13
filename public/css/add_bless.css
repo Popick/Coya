@@ -4,12 +4,13 @@
 
 body {
   font-family: Arial, sans-serif;
-  margin: 0 ;
+  margin: 0;
   background-image: url(layered-waves-haikei.svg);
-  background-size:     cover;
-  background-repeat:   no-repeat;
-  background-position: center center; 
-  background-attachment: fixed; /* Fix the background in place */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  /* Fix the background in place */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,113 +19,123 @@ body {
 }
 
 .form_box {
-  max-width: 500px; /* Adjust the max-width as needed */
+  max-width: 500px;
+  /* Adjust the max-width as needed */
   width: 100%;
+  margin: 50px auto;
   padding: 20px;
   border: 1px solid #ccc;
   box-sizing: border-box;
   background-color: azure;
-  text-align: center; /* Center all text within the form_box */
+  text-align: center;
+  /* Center all text within the form_box */
 
 }
 
 /* Add any other styles you need for labels, inputs, etc. */
 
 /* Mobile styling */
-@media screen and (max-width: 700px){
-  .form_box{
-      display:block;
+@media screen and (max-width: 700px) {
+  .form_box {
+    display: block;
   }
 }
 
 
-  
-  /* Style for the h1 header */
-  .header1 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: #769FCD;
-  }
-  
-  /* Style for the labels and inputs */
-  .label_box, .input_box {
-    direction: rtl;
-    display: block;
-    width: 100%;
-    margin: 10px auto;
-    font-size: 24px;
-    padding: 14px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
 
-  #info {
-    direction: rtl;
-    resize: none; /* Disable the resize handle */
-    outline: none; /* Remove the focus outline */
-    display: block;
-    width: 100%;
-    margin: 0 auto;
-    font-size: 16px;
-    padding: 10px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+/* Style for the h1 header */
+.header1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #769FCD;
 }
 
-  
-  /* Style for the upload button */
-  .submit_input {
-    margin: 12px auto;
-    margin-bottom: 4px;
-    display: block;
-    width: 80%;
-    padding: 15px;
-    font-size: 18px;
-    border: none;
-    border-radius: 5px;
-    background-color: #B9D7EA;
-    color: black;
-    cursor: pointer;
-  }
-  
-  /* Style for the upload button on hover */
-  .submit_input:hover {
-    background-color: #769FCD;
-    color: white;
-  }
-  
+/* Style for the labels and inputs */
+.label_box,
+.input_box {
+  direction: rtl;
+  display: block;
+  width: 100%;
+  margin: 10px auto;
+  font-size: 24px;
+  padding: 14px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
 
-  .pic_preview{
-    margin: 0 auto;
-    text-align: center;
-    justify-content: center;
+#info {
+  direction: rtl;
+  resize: none;
+  /* Disable the resize handle */
+  outline: none;
+  /* Remove the focus outline */
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  font-size: 16px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+
+/* Style for the upload button */
+.submit_input {
+  margin: 12px auto;
+  margin-bottom: 4px;
+  display: block;
+  width: 80%;
+  padding: 15px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  background-color: #B9D7EA;
+  color: black;
+  cursor: pointer;
+}
+
+/* Style for the upload button on hover */
+.submit_input:hover {
+  background-color: #769FCD;
+  color: white;
+}
+
+
+.pic_preview {
+  margin: 0 auto;
+  text-align: center;
+  justify-content: center;
+}
+
+#image-preview {
+  width: 150px;
+  height: auto;
+  margin: 0 auto;
+}
+
+
+
+
+
+.rotating-circle {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #ccc;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  animation: rotate 1s linear infinite;
+  display: none;
+  margin: 20px auto;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
   }
 
-  #image-preview{
-    /* max-width: 300px;
-    max-height: auto; */
-    margin: 0 auto;
+  to {
+    transform: rotate(360deg);
   }
-  
-
-  .rotating-circle {
-    width: 50px;
-    height: 50px;
-    border: 5px solid #ccc;
-    border-top: 5px solid #3498db;
-    border-radius: 50%;
-    animation: rotate 1s linear infinite;
-    display: none; 
-    margin: 20px auto; 
-  }
-
-  @keyframes rotate {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
+}
