@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Carousels with Arrows</title>
+    <style>
+         
+        .carouselWrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 0.2fr));
+            grid-gap: 20px;
+            justify-content: center;
+        }
+        
+        .carousel-container {
+            position: relative;
+            width: 250px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .carousel img {
+            width: 100%;
+            display: none;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0,0,0,0.3);
+            color: white;
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        .left-arrow {
+            left: 10px;
+        }
+
+        .right-arrow {
+            right: 10px;
+        }
+
+        .details {
+            margin-top: 10px;
+        }
+
+        .details p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="carouselWrapper">
+    <div class="carousel-container" data-slideindex="1">
+        <div class="carousel">
+            <img src="https://this-person-does-not-exist.com/img/avatar-gen11027f80f2ea39e079bd978693879c1c.jpg" alt="Image 1">
+            <img src="https://this-person-does-not-exist.com/img/avatar-genbdb7c8a979ed3643ed8194283f2e3580.jpg" alt="Image 2">
+            <img src="https://this-person-does-not-exist.com/img/avatar-gencfa5091863e0405ea7a7b81eaacabab9.jpg" alt="Image 3">
+        </div>
+        <span class="arrow left-arrow" data-direction="-1">&#10094;</span>
+        <span class="arrow right-arrow" data-direction="1">&#10095;</span>
+        <div class="details">
+            <p>Name: </p>
+            <p>Phone: </p>
+            <p>place: </p>
+            <p>Details for carousel 1.</p>
+        </div>
+    </div>
+
+    
+
+</div>
+
+<script type="module" src="js/missing.js"></script>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+
+</body>
+</html>
