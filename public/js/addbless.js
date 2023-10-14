@@ -175,3 +175,39 @@ function toggleRotatingCircle() {
         rotatingCircle.style.display = "none";
     }
 }
+
+
+
+function getURLParameter(name) {
+  var urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(name);
+}
+
+// Get the value of the variable from the URL
+var langVar = getURLParameter("lang");
+console.log("LANG: " + langVar)
+
+// Use the variable as needed
+if (langVar === "1") {
+  setEnglish();
+} 
+else{
+  setHebrew();
+}
+
+
+function setHebrew(){
+  document.getElementById("name").setAttribute("dir","rtl");
+  document.getElementById("info").setAttribute("dir","rtl");
+  document.querySelector(".infoBox").setAttribute("dir","rtl");
+
+}
+
+function setEnglish(){
+  document.querySelector(".header1").textContent = "Add a Greeting Card";
+  document.querySelector(".photoBox").textContent = "Add a Picture of Your Greeting Card";
+  document.querySelector(".nameBox").textContent = "Name of Greeter";
+  document.querySelector(".infoBox").textContent = "Feel free to describe your greeting card!";
+  document.getElementById("info").placeholder = "i.e: for Golani Soldiers";
+  document.querySelector(".submit_input").value = "Post Greeting Card";
+}

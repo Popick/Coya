@@ -48,7 +48,6 @@ body {
   
   /* Style for the labels and inputs */
   .label_box, .input_box {
-    direction: rtl;
     display: block;
     width: 100%;
     margin: 10px auto;
@@ -60,7 +59,6 @@ body {
   }
 
   #info {
-    direction: rtl;
     resize: none; /* Disable the resize handle */
     outline: none; /* Remove the focus outline */
     display: block;

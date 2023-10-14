@@ -72,7 +72,7 @@ var imageContainer = document.getElementById('boxes');
 function displayImages() {
     imageContainer.innerHTML = "";
     // Loop through the image URLs and create image elements inside a "box" div
-    filterUrlList.forEach(function (imageUrl) {
+    filterUrlList.forEach(function (imageUrl, index) {
         var box = document.createElement('div');
         box.className = 'box';
 
@@ -81,6 +81,10 @@ function displayImages() {
         image.style.maxWidth = '100%'; // Adjust image width as needed
 
         box.appendChild(image);
+        var postedBy = document.createElement("div");
+        postedBy.id = "posted_by"
+        postedBy.innerHTML = "הברכה של " + nameList[index];
+        box.append(postedBy);
         imageContainer.appendChild(box);
 
 
@@ -88,9 +92,16 @@ function displayImages() {
         // Add a click event listener to open the modal
         image.addEventListener('click', function (event) {
             const parentBox = image.parentElement;
-            const index = Array.from(boxes).indexOf(parentBox); console.log('Clicked box index:', index);
+            const index2 = Array.from(boxes).indexOf(parentBox); console.log('Clicked box index:', index2);
             const textBox = document.getElementById("modal-text");
-            textBox.innerHTML = "<h4>פורסם על ידי " + filterNameList[index] + "</h4><p>" + filterInfoList[index] + "</p>";
+            if (!switchElement.checked) {
+                textBox.innerHTML = "<h4>פורסם על ידי " + filterNameList[index2] + "</h4><p>" + filterInfoList[index2] + "</p>";
+                textBox.style.direction = "rtl";
+            }
+            else {
+                textBox.innerHTML = "<h4>Posted by " + filterNameList[index2] + "</h4><p>" + filterInfoList[index2] + "</p>";
+                textBox.style.direction = "ltr";
+            }
             var modal = document.getElementById('imageModal');
             modal.style.display = 'flex'; // Use flex for vertical and horizontal centering
             modalImage.src = imageUrl;
@@ -114,10 +125,9 @@ function displayImages() {
         }
     });
 
-    const boxesContainer = document.getElementById("boxes");
-    const boxElements = boxesContainer.querySelectorAll(".box");
+    const boxElements = imageContainer.querySelectorAll(".box");
     const firstBoxIMG = boxElements[0].querySelector("img"); // Select the first box
-    firstBoxIMG.onload = function() {
+    firstBoxIMG.onload = function () {
         firstBoxIMG.id = "moving-image";
     }
 
@@ -157,3 +167,81 @@ function filterImages() {
     displayImages();
 }
 
+// 0 = He, 1 = EN
+var langVar = 0; // Change this value as needed
+
+const switchElement = document.getElementById("language-toggle");
+switchElement.disabled = true;
+
+// After 2 seconds, re-enable the switch
+setTimeout(function () {
+    switchElement.disabled = false;
+
+}, 1000); // 2000 milliseconds (2 seconds)
+switchElement.checked = false;
+
+switchElement.addEventListener("change", function () {
+    if (this.checked) {
+        console.log("Switch is ON");
+        setEnglish();
+        langVar = 1;
+    } else {
+        setHebrew();
+        console.log("Switch is OFF");
+        langVar = 0;
+    }
+});
+
+
+function setEnglish() {
+    document.querySelector('.head1').textContent = "Greeting Cards for Israeli Soldiers ❤️";
+    document.querySelector('.head1').style.direction = "ltr";
+    document.getElementById("search").placeholder = "Search (i.e: for Golani Soldiers)";
+    document.getElementById('search').style.direction = "ltr";
+    document.querySelector(".add").textContent = "Add a Greeting Card";
+    document.querySelector(".instructions").innerHTML = "In this website, the children of Israel (and all over the world!) can view and upload personal blessings for Israeli soldiers!<br>Let's win this fight together!<br>";
+    document.querySelector('.instructions').style.direction = "ltr";
+    var gray = document.createElement("span");
+    gray.id = "gray";
+    document.querySelector(".instructions").appendChild(gray);
+    document.getElementById("gray").textContent = "Tip: Press the Images!";
+    const boxesContainer = document.getElementById("boxes");
+    const boxDivs = boxesContainer.getElementsByClassName('box');
+    for (let i = 0; i < boxDivs.length; i++) {
+        const postedByDiv = boxDivs[i].querySelector('#posted_by');
+        postedByDiv.textContent = nameList[i] + "'s Greeting Card";
+        postedByDiv.style.direction = "ltr";
+    }
+}
+
+
+
+function setHebrew() {
+    document.querySelector('.head1').textContent = "ברכות לחיילים שלנו❤️";
+    document.querySelector('.head1').style.direction = "rtl";
+    document.getElementById("search").placeholder = "חיפוש (לדוגמא: מוקדש לחיילי גולני)";
+    document.getElementById('search').style.direction = "rtl";
+    document.querySelector(".add").textContent = "הוספת ברכה";
+    document.querySelector(".instructions").innerHTML = "האתר מרכז ברכות של תושבי המדינה וילדי המדינה עבור החיילים שלנו! <br> בואו נחזק ונתחזק, יחד ננצח! <br>";
+    document.querySelector('.instructions').style.direction = "rtl";
+    var gray = document.createElement("span");
+    gray.id = "gray";
+    document.querySelector(".instructions").appendChild(gray);
+    document.getElementById("gray").textContent = " טיפ: תלחצו על הברכות! ";
+    const boxesContainer = document.getElementById("boxes");
+    const boxDivs = boxesContainer.getElementsByClassName('box');
+    for (let i = 0; i < boxDivs.length; i++) {
+        const postedByDiv = boxDivs[i].querySelector('#posted_by');
+        postedByDiv.textContent = "הברכה של " + nameList[i];
+        postedByDiv.style.direction = "rtl";
+
+    }
+}
+
+
+
+document.querySelector(".add").addEventListener("click", function () {
+    var url = "add_bless.html?lang=" + langVar;
+
+    window.open(url, "_blank");
+});
