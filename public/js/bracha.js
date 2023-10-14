@@ -68,7 +68,6 @@ function setModalContentSize(image) {
 }
 
 var imageContainer = document.getElementById('boxes');
-
 // Function to display images from the URLs
 function displayImages() {
     imageContainer.innerHTML = "";
@@ -84,6 +83,7 @@ function displayImages() {
         box.appendChild(image);
         imageContainer.appendChild(box);
 
+        
         const boxes = document.querySelectorAll('.box');
         // Add a click event listener to open the modal
         image.addEventListener('click', function (event) {
@@ -94,7 +94,6 @@ function displayImages() {
             var modal = document.getElementById('imageModal');
             modal.style.display = 'flex'; // Use flex for vertical and horizontal centering
             modalImage.src = imageUrl;
-            modalImage = resizeImage(modalImage);
         });
 
         
@@ -123,22 +122,7 @@ modalImage.onload = function () {
 };
 
 
-function resizeImage(image){
-    if (window.innerWidth>1080 & image.width != 1024) {
-        console.log(image.height + " / " + image.width);
-        var aspectRatio = image.height / image.width;
-        image.width = 1024;
-        image.height = 1024 * aspectRatio;
-      }
-    if (window.innerWidth<=1080 & image.width != 480) {
-        console.log(image.height + " / " + image.width);
-        var aspectRatio = image.height / image.width;
-        image.width = 480;
-        image.height = 480 * aspectRatio;
-      } 
-      
-    return image;
-}
+
 
 const searchInput = document.getElementById('search');
 searchInput.addEventListener('input', filterImages);
