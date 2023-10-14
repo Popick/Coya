@@ -176,7 +176,7 @@ body {
 
 .modal-content {
     position: relative;
-    display: flex;
+    /* display: flex; */
     justify-content: center;
     align-items: center;
     margin: 24px auto;
@@ -186,14 +186,17 @@ body {
 .close {
     position: absolute;
     top: 10px;
-    /* Adjust the top position as needed */
     right: 10px;
-    /* Adjust the right position as needed */
     background: transparent;
     border: none;
     font-size: 24px;
     cursor: pointer;
     color: #fff;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 8px;
+    /* border-radius: 50%; */
+    width: auto;
+
 }
 
 
@@ -203,7 +206,7 @@ body {
     min-height: auto;
     max-width: 100%;
     max-height: auto;
-    display: flex;
+    /* display: flex; */
 }
 
 #modalImage {
