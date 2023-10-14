@@ -123,6 +123,7 @@ modalImage.onload = function () {
 
 
 
+
 const searchInput = document.getElementById('search');
 searchInput.addEventListener('input', filterImages);
 
