@@ -31,7 +31,7 @@ body {
 /* Add any other styles you need for labels, inputs, etc. */
 
 /* Mobile styling */
-@media screen and (max-width: 700px){
+@media screen and (max-width: 728px){
   .form_box{
       display:block;
   }
