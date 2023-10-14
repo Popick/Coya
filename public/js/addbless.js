@@ -35,46 +35,93 @@ form.addEventListener('submit', (event) => {
 });
 
 
+function resizeImage(file) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+  
+      reader.onload = function (event) {
+        const img = new Image();
+        img.onload = function () {
+          const canvas = document.createElement('canvas');
+          const ctx = canvas.getContext('2d');
+
+          const maxWidth = 728;
+          const maxHeight = 728;
+          let newWidth = img.width;
+          let newHeight = img.height;
+
+
+          if (img.width > maxWidth) {
+              newWidth = maxWidth;
+              newHeight = (img.height * maxWidth) / img.width;
+          }
+      
+          if (newHeight > maxHeight) {
+              newHeight = maxHeight;
+              newWidth = (img.width * maxHeight) / img.height;
+          }
+          
+        //   console.log("og " + img.width + " " + img.height);
+        //   console.log("new " + newWidth);
+        //   console.log("new " + newHeight);
+      
+          canvas.width = newWidth;
+          canvas.height = newHeight;
+          ctx.drawImage(img, 0, 0, newWidth, newHeight);
+      
+          canvas.toBlob((blob) => {
+              resolve(blob);
+            }, 'image/jpeg');
+        };
+        img.src = event.target.result;
+      };
+  
+      reader.readAsDataURL(file);
+    });
+}
+
+
 async function uploadPhotos(pkey) {
 
     toggleRotatingCircle();
     // Get the photos from the form.
-    const photos = document.querySelector('input[name="photos"]').files;
+    const files = document.querySelector('input[name="photos"]').files;
     const firebase = window.firebase;
 
     console.log('Uploading photo');
     // Upload each photo to Firebase Storage.
-    for (const photo of photos) {
-      // Create a reference to the photo.
-      const photoRef = firebase.storage().ref('blessings/' + pkey);
-        // Upload the photo to Firebase Storage.
-      await photoRef.put(photo).then((snapshot) => {
-        // Get the download URL of the photo.
-        const photoUrl = snapshot.ref.getDownloadURL();
-        // save to the skeleton
-        photoUrl.then((url) => {
-            console.log(url);
-            if (getElementVal("name").value===""){
-                var Name = "אנונימי";
-            }
-            else{
-                var Name = getElementVal("name").value;
-            }
-            if (getElementVal("info").value===""){
-                var Info = "";
-            }
-            else{
-                var Info = getElementVal("info").value;
-            }
-            var bless1 = {
-                name: Name,
-                URL: url,
-                info: Info
-            };
-            // save the links in the database
-            writeDatabase(bless1);
+    for (const file of files) {
+        const resizedImageBlob = await resizeImage(file);
+    
+        const photoRef = firebase.storage().ref('blessings/' + pkey);
+    
+        // Upload the resized photo to Firebase Storage.
+        await photoRef.put(resizedImageBlob).then(async (snapshot) => {
+          // Get the download URL of the resized photo.
+          const photoUrl = await snapshot.ref.getDownloadURL();
+    
+          // Save to the skeleton
+          if (getElementVal("name").value === "") {
+            var Name = "אנונימי";
+          } else {
+            var Name = getElementVal("name").value;
+          }
+    
+          if (getElementVal("info").value === "") {
+            var Info = "";
+          } else {
+            var Info = getElementVal("info").value;
+          }
+    
+          const bless1 = {
+            name: Name,
+            URL: photoUrl,
+            info: Info
+          };
+    
+          // Save the links in the database
+          writeDatabase(bless1);
         });
-      });
     }
     toggleRotatingCircle();
 }
@@ -110,6 +157,7 @@ imageUploadInput.addEventListener("change", function () {
         imagePreview.src = imageURL;
         imagePreview.style.display = "block"; // Set the display property to "block" to make it visible
         console.log("image");
+
     } else {
         // If no file is selected, clear the image preview
         imagePreview.src = "";
@@ -122,8 +170,8 @@ function toggleRotatingCircle() {
     var computedStyle = window.getComputedStyle(rotatingCircle);
 
     if (computedStyle.display === "none") {
-      rotatingCircle.style.display = "block";
+        rotatingCircle.style.display = "block";
     } else {
-      rotatingCircle.style.display = "none";
+        rotatingCircle.style.display = "none";
     }
 }
