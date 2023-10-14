@@ -83,20 +83,20 @@ function displayImages() {
         box.appendChild(image);
         imageContainer.appendChild(box);
 
-        
+
         const boxes = document.querySelectorAll('.box');
         // Add a click event listener to open the modal
         image.addEventListener('click', function (event) {
             const parentBox = image.parentElement;
             const index = Array.from(boxes).indexOf(parentBox); console.log('Clicked box index:', index);
             const textBox = document.getElementById("modal-text");
-            textBox.innerHTML = "פורסם על ידי "+ filterNameList[index] + "<br>" + filterInfoList[index];
+            textBox.innerHTML = "פורסם על ידי " + filterNameList[index] + "<br>" + filterInfoList[index];
             var modal = document.getElementById('imageModal');
             modal.style.display = 'flex'; // Use flex for vertical and horizontal centering
             modalImage.src = imageUrl;
         });
 
-        
+
     });
 
     // Close the modal when the 'x' is clicked
@@ -113,6 +113,13 @@ function displayImages() {
             modal.style.display = 'none';
         }
     });
+
+    const boxesContainer = document.getElementById("boxes");
+    const boxElements = boxesContainer.querySelectorAll(".box");
+    const firstBoxIMG = boxElements[0].querySelector("img"); // Select the first box
+    firstBoxIMG.onload = function() {
+        firstBoxIMG.id = "moving-image";
+    }
 
 }
 
@@ -131,10 +138,10 @@ searchInput.addEventListener('input', filterImages);
 function filterImages() {
     console.log("FUCK HAMAS FUCK HAMAS FUCK HAMAS FUCK HAMAS FUCK HAMAS FUCK HAMAS");
     const searchTerm = searchInput.value.toLowerCase();
-    console.log("search:" +searchTerm);
-     filterUrlList = [];
-     filterNameList = [];
-     filterInfoList = [];
+    console.log("search:" + searchTerm);
+    filterUrlList = [];
+    filterNameList = [];
+    filterInfoList = [];
 
     for (let i = 0; i < urlList.length; i++) {
         if (infoList[i].toLowerCase().includes(searchTerm)) {

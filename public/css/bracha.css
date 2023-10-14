@@ -108,6 +108,11 @@ body {
     border-radius: 10px;
 }
 
+#gray{
+    color: #4c6778;
+    font-size:2vh ;
+}
+
 
 @media (max-width:810px) {
     .head1{
@@ -226,6 +231,25 @@ body {
     padding: 16px;
     background: #fff;
 }
+
+#moving-image {
+    animation: moveUpDown 1s ease 0.5s 1 forwards;
+  }
+  
+  
+  @keyframes moveUpDown {
+      0% {
+          transform: translateY(0);
+      }
+      50% {
+          transform: translateY(-20px);
+      }
+      100% {
+          transform: translateY(0);
+      }
+  }
+
+
 
 @media screen and (max-width: 728px){
     #modal-text {
