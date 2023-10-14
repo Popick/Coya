@@ -90,7 +90,7 @@ function displayImages() {
             const parentBox = image.parentElement;
             const index = Array.from(boxes).indexOf(parentBox); console.log('Clicked box index:', index);
             const textBox = document.getElementById("modal-text");
-            textBox.innerHTML = "פורסם על ידי " + filterNameList[index] + "<br>" + filterInfoList[index];
+            textBox.innerHTML = "<h4>פורסם על ידי " + filterNameList[index] + "</h4><p>" + filterInfoList[index] + "</p>";
             var modal = document.getElementById('imageModal');
             modal.style.display = 'flex'; // Use flex for vertical and horizontal centering
             modalImage.src = imageUrl;
