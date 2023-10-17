@@ -19,9 +19,9 @@ body {
     top: 14px;
     left: 24px;
     text-align: center;
-  }
-  
-  .switch > span {
+}
+
+.switch>span {
     position: absolute;
     top: 12px;
     pointer-events: none;
@@ -32,34 +32,35 @@ body {
     text-shadow: 0 1px 0 rgba(0, 0, 0, .06);
     width: 50%;
     text-align: center;
-  }
-  
-  input.check-toggle-round-flat:checked ~ .off {
+}
+
+input.check-toggle-round-flat:checked~.off {
     color: #2344ff;
-  }
-  
-  input.check-toggle-round-flat:checked ~ .on {
+}
+
+input.check-toggle-round-flat:checked~.on {
     color: #fff;
-  }
-  
-  .switch > span.on {
+}
+
+.switch>span.on {
     left: 0;
     padding-left: 2px;
     color: #2344ff;
-  }
-  
-  .switch > span.off {
+}
+
+.switch>span.off {
     right: 0;
     padding-right: 4px;
     color: #fff;
-  }
-  
-  .check-toggle {
+}
+
+.check-toggle {
     position: absolute;
     margin-left: -9999px;
     visibility: hidden;
-  }
-  .check-toggle + label {
+}
+
+.check-toggle+label {
     display: block;
     position: relative;
     cursor: pointer;
@@ -68,9 +69,9 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-  }
-  
-  input.check-toggle-round-flat + label {
+}
+
+input.check-toggle-round-flat+label {
     padding: 2px;
     width: 97px;
     height: 35px;
@@ -80,26 +81,29 @@ body {
     -ms-border-radius: 60px;
     -o-border-radius: 60px;
     border-radius: 60px;
-  }
-  input.check-toggle-round-flat + label:before, input.check-toggle-round-flat + label:after {
+}
+
+input.check-toggle-round-flat+label:before,
+input.check-toggle-round-flat+label:after {
     display: block;
     position: absolute;
     content: "";
-  }
-  
-  input.check-toggle-round-flat + label:before {
+}
+
+input.check-toggle-round-flat+label:before {
     top: 2px;
     left: 2px;
     bottom: 2px;
     right: 2px;
     background-color: #2344ff;
-    
+
     -moz-border-radius: 60px;
     -ms-border-radius: 60px;
     -o-border-radius: 60px;
     border-radius: 60px;
-  }
-  input.check-toggle-round-flat + label:after {
+}
+
+input.check-toggle-round-flat+label:after {
     top: 4px;
     left: 4px;
     bottom: 4px;
@@ -114,13 +118,13 @@ body {
     -moz-transition: margin 0.2s;
     -o-transition: margin 0.2s;
     transition: margin 0.2s;
-  }
-  
+}
 
-  
-  input.check-toggle-round-flat:checked + label:after {
+
+
+input.check-toggle-round-flat:checked+label:after {
     margin-left: 44px;
-  }
+}
 
 
 .container_full {
@@ -219,9 +223,9 @@ body {
 }
 
 
-#gray{
+#gray {
     color: #4c6778;
-    font-size:2vh ;
+    font-size: 2vh;
 }
 
 
@@ -253,12 +257,12 @@ body {
     transform: scale(1.2);
 }
 
-.box #posted_by{
+.box #posted_by {
     width: 50%;
-    direction:  rtl;
+    direction: rtl;
     font-size: 2vh;
     color: white;
-    padding-top:8px ;
+    padding-top: 8px;
     padding-bottom: 8px;
     background-color: rgba(0, 0, 0, 0.7);
     margin: 12px auto;
@@ -279,14 +283,14 @@ body {
     text-align: center;
     align-content: center;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .modal-content {
     position: relative;
     justify-content: center;
     align-items: center;
-    margin: 24px auto;
+    margin: auto auto;
     background-color: rgba(0, 0, 0, 0.3);
 }
 
@@ -317,13 +321,15 @@ body {
 
 
 #modalImage {
-    width: 100%;
-    max-height: 80vh;
+    max-height: 60vh;
     display: block;
     margin: 0 auto;
 }
 
 #modal-text {
+    margin: 0 auto;
+    max-width: 60%;
+    height: auto;
     font-size: 24px;
     direction: rtl;
     padding: 16px;
@@ -332,38 +338,44 @@ body {
 
 #moving-image {
     animation: moveUpDown 1s ease 0.5s 1 forwards;
-  }
-  
-  
-  @keyframes moveUpDown {
-      0% {
-          transform: translateY(0);
-      }
-      50% {
-          transform: translateY(-20px);
-      }
-      100% {
-          transform: translateY(0);
-      }
-  }
+}
 
 
-  @media (max-width:810px) {
-    .head1{
+@keyframes moveUpDown {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+@media (max-width:810px) {
+    .head1 {
         font-size: 48px;
     }
-    
-    .add{
+
+    .add {
         font-size: 24px;
     }
-    
+
     .input_box {
         max-width: 100%;
     }
 
+    #modalImage {
+        max-width: 100%;
+        max-height: 70vh;
+    }
+    
 
-
-    .instructions{
+    .instructions {
         font-size: 2.5vh;
     }
 
@@ -373,4 +385,3 @@ body {
 
 
 }
-
